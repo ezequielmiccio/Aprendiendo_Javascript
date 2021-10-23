@@ -2,7 +2,17 @@
 
 // En el primer desafío analizamos la situación de las personas.
 
-/* let sueldo1 = prompt("ingrese su anteúltimo sueldo"); 
+let nombrePila = "Ezequiel";
+
+let usuario = prompt("ingrese su nombre");
+
+if(usuario == nombrePila) {
+    console.log("¡Hola, Ezequiel!")
+}else {
+    alert("No sos Ezequiel, andate")
+}
+
+let sueldo1 = 35000;
 let sueldo2 = prompt("ingrese su último sueldo")
 
 let suma = parseInt(sueldo1) + parseInt(sueldo2);
@@ -12,4 +22,4 @@ if(suma >= 70000) {
 }
 else {
     console.log("Usted es Pobre")
-} */
+}

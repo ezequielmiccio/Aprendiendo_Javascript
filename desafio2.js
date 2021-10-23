@@ -1,5 +1,3 @@
-// Ejercicio 2
-
 // Un cajero de supermercado debe cerrar la caja para terminar su trabajo.
 
 let caja = 12;
