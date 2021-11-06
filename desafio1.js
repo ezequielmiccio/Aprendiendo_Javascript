@@ -15,7 +15,7 @@ if(usuario == nombrePila) {
 let sueldo1 = 35000;
 let sueldo2 = prompt("ingrese su último sueldo")
 
-let suma = parseInt(sueldo1) + parseInt(sueldo2);
+let suma = (sueldo1) + parseInt(sueldo2); /* sueldo1 no tiene parseInt ya que es un numero y no hace falta el parse para convertirlo en numero dos veces */
 
 if(suma >= 70000) {
     console.log("Usted NO es pobre")
