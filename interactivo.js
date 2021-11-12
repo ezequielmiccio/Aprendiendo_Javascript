@@ -64,3 +64,46 @@ function comprar(){
 
     }
 }
+
+// DESAFIO FUNCIONES
+
+alert("Solo aceptamos visa o mastercard en 3 y 6 cuotas");
+let credito = prompt("Ingrese su tarjeta");
+let pagos = parseInt(prompt("Ingrese las cuotas deseadas"));
+
+if(credito != "ESC" && pagos != "ESC"){
+    tarjetaCredito( tarjeta , cuotas );
+    let valorNeto = precioFinal + tarjetaCredito( tarjeta , cuotas );
+    alert(valorNeto);
+}else {
+    alert("forma de pago invalida");
+}
+
+function tarjetaCredito (tarjeta, cuotas) {
+
+    interesCuotas = 0;
+    tarjeta = credito;
+    cuotas = pagos;
+    
+    if(tarjeta == "visa" && cuotas == 3 ) {
+        interesCuotas = precioFinal * 0.15;
+        return interesCuotas;
+    }
+    else if(credito == "visa" && pagos == 6) {
+        interesCuotas = precioFinal * 0.30;
+        return interesCuotas;
+    }
+    else if(credito == "mastercard" && pagos == 3) {
+        interesCuotas = precioFinal * 0.20;
+        return interesCuotas;
+    }
+    else if(credito == "mastercard" && pagos == 6) {
+        interesCuotas = precioFinal * 0.35;
+        return interesCuotas;
+    }
+    else {
+        alert("Esta forma de pago no es valida")
+    }
+}
+
+
