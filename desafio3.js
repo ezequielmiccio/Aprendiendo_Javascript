@@ -27,24 +27,40 @@ for (let i = 0 ; i < 10 ; i++) {
 }
 
 
-// DO - WHILE
+// WHILE
 // Control de Asistencias
 
 let ingreso = prompt("Ingrese su nombre");
 let asistencia = prompt("Si está presente ingrese: si")
 
-do(asistencia != "ESC") {
+while(asistencia != "ESC") {
 
     console.log("Muchas gracias por su colaboración")
 
     if ( asistencia == "si" || asistencia == "SI") {
-        console.log("El alumno " + name + " se encuentra presente")
+        console.log("El alumno " + ingreso + " se encuentra presente")
     }
 
     else {
-        console.log("El alumno " + name + " se encuentra ausente")
+        console.log("El alumno " + ingreso + " se encuentra ausente")
     }
 
     ingreso = prompt("Ingrese su nombre");
     asistencia = prompt ("Si está presente ingrese: si");
+}
+
+// DO - WHILE
+
+let numero = 0;
+
+do {
+    document.write(numero + "<br>");
+}
+
+while(numero > 6) {
+    console.log(numero + " es menor a 6")
+
+    if (numero == 3) {
+        break;
+    }
 }
