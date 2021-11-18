@@ -1,4 +1,4 @@
-let usuario = prompt("Ingrese su nombre");
+/* let usuario = prompt("Ingrese su nombre");
 let edad = parseInt(prompt("Ingrese su edad"));
 
 
@@ -104,6 +104,100 @@ function tarjetaCredito (tarjeta, cuotas) {
     else {
         alert("Esta forma de pago no es valida")
     }
+} */
+
+
+// CLASS CLIENTE
+
+class cliente {
+    constructor (nombre, edad){
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    mayorEdad (){
+        if(this.edad >= 18){
+            return true
+        }else{
+            return false
+        }
+    }
 }
+
+// ARRAY
+
+let listaDeClientes = [];
+
+for(let i = 0 ; i <= 5 ; i++){
+    let nombreCliente = prompt("Ingrese su nombre");
+    let edadCliente = prompt("Ingrese su Edad");
+
+    listaDeClientes.push(new cliente (nombreCliente, edadCliente));
+}
+
+console.log(listaDeClientes);
+
+for(let cliente of listaDeClientes){
+    if(cliente.mayorEdad()){
+        console.log(cliente.nombre + ": puede comprar");
+    }else{
+        console.log("El usuario " + cliente.nombre + " es menor de edad");
+    }
+}
+
+// El cliente busca comparar celulares. Quiere saber sus funcionalidades.
+
+class celular {
+    constructor (nombre , rdp , rdc , ram , precio) {
+
+        this.nombre = nombre;
+        this.resolucionDePantalla = rdp;
+        this.resolucionDeCamara = rdc;
+        this.memoriaRam = ram;
+        this.precio = precio;
+        this.encendido = false;
+
+    }
+
+    ivaAgregado() {
+        let iva = this.precio * 0.21;
+        return this.precio + iva;
+    }
+
+    presionarBotonEncendido() {
+        if(this.encendido == false) {
+            alert("Celular Prendido");
+            this.encendido = true;
+        }else {
+            alert("Celular Apagado")
+            this.encendido = false;
+        }
+    }
+
+    reiniciar() {
+        if(this.encendido == true) {
+            alert("Reiniciando Celular");
+        }else {
+            alert("El celular está apagado")
+        }
+    }
+}
+
+celular1 = new celular ("Iphone X" , "HD" , "10px" , "4 GB" , 400);
+celular2 = new celular ("Iphone XS" , "Full HD" , "12px" , "8 GB" , 590);
+celular3 = new celular ("Iphone XS MAX" , "Full HD" , "14px" , "16 GB" , 720);
+
+celular1.presionarBotonEncendido();
+celular1.reiniciar();
+
+celular1.ivaAgregado();
+console.log("El celular: " + celular1.nombre + " tiene un valor final de: " + celular1.ivaAgregado() + " USD");
+
+celular2.ivaAgregado();
+console.log("El celular: " + celular2.nombre + " tiene un valor final de: " + celular2.ivaAgregado() + " USD");
+
+celular3.ivaAgregado();
+console.log("El celular: " + celular3.nombre + " tiene un valor final de: " + celular3.ivaAgregado() + " USD");
+
 
 
