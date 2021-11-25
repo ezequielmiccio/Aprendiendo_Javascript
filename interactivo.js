@@ -141,7 +141,7 @@ for(let cliente of listaDeClientes){
     if(cliente.mayorEdad()){
         console.log(cliente.nombre + ": puede comprar");
     }else{
-        console.log("El usuario " + cliente.nombre + " es menor de edad");
+        console.log("El usuario " + cliente.nombre + " es menor de edad");q
     }
 }
 

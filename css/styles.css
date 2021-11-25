@@ -1,0 +1,167 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+#container {
+  width: 90%;
+  height: auto;
+  margin: 3rem auto;
+  border: 1px solid rgba(225, 225, 226, 0.8);
+  box-shadow: 0px 0px 10px #ccc;
+  min-height: 50rem;
+  /* fin header - menu*/
+  /* inicio contenido tarjetas */
+}
+
+#container #header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 8rem;
+  border-bottom: 1px solid rgba(225, 225, 226, 0.8);
+}
+
+#container #header .logo {
+  flex-basis: 50%;
+  padding: 1rem;
+  color: black;
+  text-shadow: 1px 1px 0px #ccc;
+  text-transform: uppercase;
+}
+
+#container #header .logo h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 35px;
+  padding-left: 1.8rem;
+}
+
+#container #header #menu {
+  flex-basis: 35%;
+  height: 100%;
+  padding-left: 9rem;
+}
+
+#container #header #menu ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+#container #header #menu ul a {
+  text-transform: uppercase;
+  color: #464646;
+  padding: 1rem;
+  transition: all 300ms;
+  font-weight: bold;
+}
+
+#container #header #menu ul a:hover {
+  background-color: #ccc;
+  color: white;
+}
+
+#container #content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  /* inicio productos */
+  /* fin productos */
+  /* inicio aside */
+  /* fin aside */
+}
+
+#container #content #productos {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  flex-basis: 80%;
+}
+
+#container #content #productos .project {
+  margin-bottom: 25px;
+  margin-right: 2rem;
+  border: 1px solid #ccc;
+  flex-basis: 250px;
+  flex-grow: 1;
+}
+
+#container #content #productos .project img {
+  width: 100%;
+}
+
+#container #content #productos .project .project-info {
+  padding: 10px;
+}
+
+#container #content #productos .project .project-info a {
+  font-size: 15px;
+  color: #464545;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 300ms;
+}
+
+#container #content #productos .project .project-info a:hover {
+  color: #ccc;
+}
+
+#container #content #productos .project .project-info p {
+  color: grey;
+  font-size: 15px;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+#container #content #aside {
+  flex-basis: 15%;
+  margin-right: 2rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #f7f7f7;
+}
+
+#container #content #aside h2 {
+  display: block;
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 100;
+  color: #444;
+  padding-bottom: 10px;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(225, 225, 226, 0.8);
+  text-align: center;
+}
+
+#container #content #aside ul li {
+  padding-bottom: 1.5rem;
+}
+
+#container #content #aside a {
+  font-family: sans-serif;
+  text-align: center;
+  display: block;
+  padding: 1.2rem;
+  background-color: #eee;
+  color: #444;
+  transition: all 300ms;
+  text-transform: uppercase;
+}
+
+#container #content #aside a:hover {
+  background-color: #444;
+  color: #eee;
+}
