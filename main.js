@@ -74,6 +74,10 @@ class celular {
     getStock(){
         return this.stock;
     }
+
+    mobileinfo(){
+        return 
+    }
 }
 
 celular1 = new celular ("Iphone X" , "HD" , "10px" , "4 GB" , 400, 6);

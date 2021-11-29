@@ -16,7 +16,6 @@ else {
 // Una vez ingresado al sistema tiene que cerrar con sus valores. Lo correcto sería que quede con $300. Si cierra con menos le falta, si cierra con más le sobra.
 
 let valorFinal = "300"
-
 let valor = prompt("ingrese con cuanto dinero cierra")
 
 
