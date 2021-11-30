@@ -1,11 +1,38 @@
 let registro = [];
-let nombreRegistro;
 let apellidoRegistro;
 let edadRegistro;
 let ganadorDescuento;
 let codigoDescuento = 1212;
 
-function saludar () {
+// DOM TARJETS DINAMICAS
+
+let productos = [
+    {nombre: "Iphone X" , precio: "500 USD" , img: "./assets/img/IPHONE-X-BLACK.jpg" , ahorro: "Ahorrá 15%"}, // direccion de una imagen cualquiera
+    {nombre: "Iphone Xs", precio: "550 USD" , img: "./assets/img/IPHONE-XS-WHITE.jpg" , ahorro: "Ahorrá 25%"},
+    {nombre: "Iphone Xs Max" , precio: "600 USD" , img: "./assets/img/IPHONE-XSMAX-ROSE.jpg" , ahorro: "Ahorrá 30%"}
+]
+
+console.log(productos);
+
+let cargaProductos = document.getElementById("productos");
+
+for( let producto of productos ){ // con este ciclo recorremos el array
+
+    // += es igual a que se vaya agregando uno tras otro
+    cargaProductos.innerHTML += `<div class="tarjets">
+                                 <img src="${producto.img}">
+                                 <h4 class="title">${producto.nombre}</h4>
+                                 <div class="txt">
+                                 <p>${producto.precio}</p>
+                                 <p class="ahorro">${producto.ahorro}</p>
+                                 </div>
+                                 <button id="agregarCarrito">Comprar</button>
+                                 </div>`
+} // los backticks los utilizamos para escribir dentro de html
+
+// FIN DOM
+
+/* function saludar () {
     alert("Sos parte de los primeros 3 clientes, felicidades: " + nombreRegistro + " " + apellidoRegistro + "te otorgamos este codigo de descuento: " + codigoDescuento);
 }
 
@@ -16,7 +43,6 @@ for(let i = 0 ; i < 3 ; i++){
     nombreRegistro = prompt("Ingrese su nombre");
     apellidoRegistro = prompt("Ingrese su apellido");
     edadRegistro = parseInt(prompt("Ingrese su edad"));
-
     registro.push(nombreRegistro + " " + apellidoRegistro);
 
     if(nombreRegistro != "ESC"){
@@ -27,6 +53,7 @@ for(let i = 0 ; i < 3 ; i++){
         alert("Usuario no registrado");
     }
 }
+
 
 console.log(registro);
 alert("Puede probar el producto deseado");
@@ -138,6 +165,6 @@ comprarDescuento();
 function comprar () {
     
 }
-
+ */
 
 

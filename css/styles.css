@@ -7,14 +7,18 @@
 }
 
 #container {
-  width: 90%;
+  width: 95%;
   height: auto;
-  margin: 3rem auto;
+  margin: 1rem auto;
   border: 1px solid rgba(225, 225, 226, 0.8);
   box-shadow: 0px 0px 10px #ccc;
   min-height: 50rem;
   /* fin header - menu*/
   /* inicio contenido tarjetas */
+  /* inicio registro */
+  /* fin registro */
+  /* inicio formulario */
+  /* fin formulario */
 }
 
 #container #header {
@@ -22,30 +26,45 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: end;
   height: 8rem;
   border-bottom: 1px solid rgba(225, 225, 226, 0.8);
+  /* inicio logo */
+  /* fin logo */
+  /* inicio nav */
+  /* fin nav */
 }
 
 #container #header .logo {
-  flex-basis: 50%;
-  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-basis: 10%;
   color: black;
   text-shadow: 1px 1px 0px #ccc;
   text-transform: uppercase;
+  padding-right: 10rem;
 }
 
-#container #header .logo h1 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: italic;
-  font-weight: 900;
-  font-size: 35px;
-  padding-left: 1.8rem;
+#container #header .logo #logotipo {
+  width: 5rem;
+  height: 5rem;
 }
 
 #container #header #menu {
-  flex-basis: 35%;
+  display: flex;
+  flex-direction: row;
+  column-gap: 5rem;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 70%;
+  width: 100%;
   height: 100%;
-  padding-left: 9rem;
+}
+
+#container #header #menu .search {
+  height: 35%;
+  width: 50%;
+  justify-self: start;
 }
 
 #container #header #menu ul {
@@ -53,8 +72,9 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: 100%;
+  width: 40%;
 }
 
 #container #header #menu ul a {
@@ -72,7 +92,6 @@
 
 #container #content {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -84,44 +103,75 @@
 
 #container #content #productos {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-evenly;
   flex-basis: 80%;
 }
 
-#container #content #productos .project {
-  margin-bottom: 25px;
-  margin-right: 2rem;
-  border: 1px solid #ccc;
-  flex-basis: 250px;
-  flex-grow: 1;
+#container #content #productos .tarjets {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  width: 14rem;
+  height: auto;
+  background-image: linear-gradient(#888, black);
 }
 
-#container #content #productos .project img {
-  width: 100%;
+#container #content #productos .tarjets img {
+  justify-self: start;
+  align-self: center;
+  box-shadow: 0px 0px 3px #d8d8d8;
 }
 
-#container #content #productos .project .project-info {
-  padding: 10px;
-}
-
-#container #content #productos .project .project-info a {
-  font-size: 15px;
-  color: #464545;
+#container #content #productos .tarjets .title {
+  color: white;
+  text-align: start;
+  margin-left: 1rem;
+  justify-self: end;
   text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+#container #content #productos .tarjets .txt {
+  margin: 1rem 0rem;
+  margin-bottom: 1rem;
+}
+
+#container #content #productos .tarjets .txt p {
+  text-align: start;
+  justify-self: end;
   font-weight: bold;
+  color: white;
+  font-size: 30px;
+  margin-left: 1rem;
+}
+
+#container #content #productos .tarjets .txt .ahorro {
+  font-size: 14px;
+  color: yellow;
+}
+
+#container #content #productos .tarjets button {
+  text-align: center;
+  line-height: 2.5rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  background-color: white;
+  width: 50%;
+  height: 25%;
+  margin-left: 3.5rem;
+  border-radius: 3px;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#container #content #productos .tarjets button:hover {
+  background: yellow;
+  font-weight: 900;
+  color: white;
   transition: all 300ms;
-}
-
-#container #content #productos .project .project-info a:hover {
-  color: #ccc;
-}
-
-#container #content #productos .project .project-info p {
-  color: grey;
-  font-size: 15px;
-  font-style: italic;
-  margin-top: 0.5rem;
 }
 
 #container #content #aside {
@@ -164,4 +214,64 @@
 #container #content #aside a:hover {
   background-color: #444;
   color: #eee;
+}
+
+#container #goInfo {
+  min-height: 20rem;
+}
+
+#container #goInfo .containerTxt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 2rem;
+  height: 30rem;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+
+#container #registro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40rem;
+  background-color: #fffffe;
+  margin-top: 10rem;
+}
+
+#container #registro .containerForm {
+  width: 35%;
+  height: 38rem;
+  background-color: wheat;
+}
+
+#container #registro .containerForm #formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 36rem;
+  row-gap: 5rem;
+}
+
+#container #registro .containerForm #formulario .first .box h6 {
+  margin-bottom: 0.8rem;
+  margin-top: 2.5rem;
+}
+
+#container #registro .containerForm #formulario .second .box {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.5rem;
+}
+
+#container #registro .containerForm #formulario .third {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
 }
