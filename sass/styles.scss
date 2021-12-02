@@ -22,7 +22,8 @@
         align-items: center;
         justify-content: end;
         height: 8rem;
-        border-bottom: 1px solid rgba(225,225,226, 0.8);
+        background-color: #0f0f0f;
+        border-bottom: 1px solid rgba(24, 24, 24, 0.842);
 
         /* inicio logo */
 
@@ -57,9 +58,19 @@
             height: 100%;
             
             .search {
-                height: 35%;
+                height: 40%;
                 width: 50%;
                 justify-self: start;
+                background-color: rgb(43, 43, 43);
+                border: none;
+                border-radius: 1rem;
+
+                &::placeholder{
+                    font-size: 15px;
+                    color: rgb(92, 92, 92);
+                    padding-left: 1rem;
+                    font-style: italic;
+                }
             }
             
             ul {
@@ -73,13 +84,14 @@
 
                 a {
                     text-transform: uppercase;
-                    color: rgb(70, 70, 70);
+                    color: white;
                     padding: 1rem;
                     transition: all 300ms;
                     font-weight: bold;
 
                     &:hover{
-                        background-color: #ccc;
+                        background-color: rgba(255, 68, 0, 0.904);
+                        border-radius: 5px;
                         color: white;
                     }
                 }
@@ -98,6 +110,7 @@
         justify-content: space-between;
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
+        background-color: rgb(15, 15, 15);
 
         /* inicio productos */
 
@@ -111,14 +124,18 @@
                 display: flex;
                 flex-direction: column;
                 row-gap: 1rem;
-                width: 14rem;
+                width: 16rem;
                 height: auto;
-                background-image: linear-gradient(#888, black);
+                box-shadow: 0px 0px 5px rgba(70, 70, 70, 0.911);
+                background-color: rgb(27, 27, 27);
+                border-radius: 5px;
 
                 img {
                     justify-self: start;
                     align-self: center;
-                    box-shadow: 0px 0px 3px rgb(216, 216, 216);
+                    box-shadow: 0px 0px 5px rgb(216, 216, 216);
+                    margin-top: 1rem;
+                    border-radius: 5px;
                 }
 
                 .title {
@@ -140,7 +157,7 @@
                         justify-self: end;
                         font-weight: bold;
                         color: white;
-                        font-size: 30px;
+                        font-size:22px;
                         margin-left: 1rem;
                         
                     }
@@ -160,13 +177,14 @@
                     width: 50%;
                     height: 25%;
                     margin-left: 3.5rem;
-                    border-radius: 3px;
+                    border-radius: 5px;
                     color: black;
                     font-size: 18px;
                     font-weight: bold;
 
                     &:hover {
-                        background:yellow;
+                        background:orangered;
+                        border-radius: 5px;
                         font-weight: 900;
                         color: white;
                         transition: all 300ms;
@@ -189,7 +207,8 @@
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
-            background-color: rgb(247, 247, 247);
+            background-color: #2222;
+            box-shadow: 0px 0px 3px rgb(19, 18, 18);
 
             h2{
                 display: block;
@@ -233,6 +252,7 @@
     /* inicio registro */
 
     #goInfo {
+        margin: 2px 0;
         min-height: 20rem;
         .containerTxt {
             display: flex;
@@ -245,8 +265,16 @@
             background-color: black;
             color:white;
 
-            .preTitle {
-              
+            .goEmail {
+                width: 40%;
+                height: 10%;
+                border-radius: 5px;
+
+                &::placeholder{
+                    font-size: 18px;
+                    padding-left: 1rem;
+                    color: rgba(0, 0, 0, 0.774);
+                }
             }
         }
     }
@@ -269,7 +297,6 @@
         width: 100%;
         height: 40rem;
         background-color: rgb(255, 255, 254);
-        margin-top: 10rem;
 
             .containerForm {
                 width: 35%;

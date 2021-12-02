@@ -7,9 +7,9 @@ let codigoDescuento = 1212;
 // DOM TARJETS DINAMICAS
 
 let productos = [
-    {nombre: "Iphone X" , precio: "500 USD" , img: "./assets/img/IPHONE-X-BLACK.jpg" , ahorro: "Ahorrá 15%"}, // direccion de una imagen cualquiera
-    {nombre: "Iphone Xs", precio: "550 USD" , img: "./assets/img/IPHONE-XS-WHITE.jpg" , ahorro: "Ahorrá 25%"},
-    {nombre: "Iphone Xs Max" , precio: "600 USD" , img: "./assets/img/IPHONE-XSMAX-ROSE.jpg" , ahorro: "Ahorrá 30%"}
+    {nombre: "Fifa 20" , precio: "4500" , img: "./assets/img/fifa20.jpg" , ahorro: "Ahorrá 15%"}, // direccion de una imagen cualquiera
+    {nombre: "NBA 2k20", precio: "3750" , img: "./assets/img/pes2020.jpg" , ahorro: "Ahorrá 25%"},
+    {nombre: "PES 2020" , precio: "2600" , img: "./assets/img/nba2k20.jpg" , ahorro: "Ahorrá 30%"}
 ]
 
 console.log(productos);
@@ -23,12 +23,22 @@ for( let producto of productos ){ // con este ciclo recorremos el array
                                  <img src="${producto.img}">
                                  <h4 class="title">${producto.nombre}</h4>
                                  <div class="txt">
-                                 <p>${producto.precio}</p>
+                                 <p>$${producto.precio}</p>
                                  <p class="ahorro">${producto.ahorro}</p>
                                  </div>
-                                 <button id="agregarCarrito">Comprar</button>
+                                 <button id="addToCart">Comprar</button>
                                  </div>`
 } // los backticks los utilizamos para escribir dentro de html
+
+
+const carrito = document.querySelectorAll("#addToCart");
+console.log(carrito);
+
+carrito.forEach(productosSeleccionados => {
+    productosSeleccionados.addEventListener('click' , addClicked);
+});
+
+function addClicked
 
 // FIN DOM
 

@@ -28,7 +28,8 @@
   align-items: center;
   justify-content: end;
   height: 8rem;
-  border-bottom: 1px solid rgba(225, 225, 226, 0.8);
+  background-color: #0f0f0f;
+  border-bottom: 1px solid rgba(24, 24, 24, 0.842);
   /* inicio logo */
   /* fin logo */
   /* inicio nav */
@@ -62,9 +63,19 @@
 }
 
 #container #header #menu .search {
-  height: 35%;
+  height: 40%;
   width: 50%;
   justify-self: start;
+  background-color: #2b2b2b;
+  border: none;
+  border-radius: 1rem;
+}
+
+#container #header #menu .search::placeholder {
+  font-size: 15px;
+  color: #5c5c5c;
+  padding-left: 1rem;
+  font-style: italic;
 }
 
 #container #header #menu ul {
@@ -79,14 +90,15 @@
 
 #container #header #menu ul a {
   text-transform: uppercase;
-  color: #464646;
+  color: white;
   padding: 1rem;
   transition: all 300ms;
   font-weight: bold;
 }
 
 #container #header #menu ul a:hover {
-  background-color: #ccc;
+  background-color: rgba(255, 68, 0, 0.904);
+  border-radius: 5px;
   color: white;
 }
 
@@ -95,6 +107,7 @@
   justify-content: space-between;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+  background-color: #0f0f0f;
   /* inicio productos */
   /* fin productos */
   /* inicio aside */
@@ -112,15 +125,19 @@
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
-  width: 14rem;
+  width: 16rem;
   height: auto;
-  background-image: linear-gradient(#888, black);
+  box-shadow: 0px 0px 5px rgba(70, 70, 70, 0.911);
+  background-color: #1b1b1b;
+  border-radius: 5px;
 }
 
 #container #content #productos .tarjets img {
   justify-self: start;
   align-self: center;
-  box-shadow: 0px 0px 3px #d8d8d8;
+  box-shadow: 0px 0px 5px #d8d8d8;
+  margin-top: 1rem;
+  border-radius: 5px;
 }
 
 #container #content #productos .tarjets .title {
@@ -143,7 +160,7 @@
   justify-self: end;
   font-weight: bold;
   color: white;
-  font-size: 30px;
+  font-size: 22px;
   margin-left: 1rem;
 }
 
@@ -161,14 +178,15 @@
   width: 50%;
   height: 25%;
   margin-left: 3.5rem;
-  border-radius: 3px;
+  border-radius: 5px;
   color: black;
   font-size: 18px;
   font-weight: bold;
 }
 
 #container #content #productos .tarjets button:hover {
-  background: yellow;
+  background: orangered;
+  border-radius: 5px;
   font-weight: 900;
   color: white;
   transition: all 300ms;
@@ -181,7 +199,8 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  background-color: #f7f7f7;
+  background-color: #2222;
+  box-shadow: 0px 0px 3px #131212;
 }
 
 #container #content #aside h2 {
@@ -217,6 +236,7 @@
 }
 
 #container #goInfo {
+  margin: 2px 0;
   min-height: 20rem;
 }
 
@@ -232,6 +252,18 @@
   color: white;
 }
 
+#container #goInfo .containerTxt .goEmail {
+  width: 40%;
+  height: 10%;
+  border-radius: 5px;
+}
+
+#container #goInfo .containerTxt .goEmail::placeholder {
+  font-size: 18px;
+  padding-left: 1rem;
+  color: rgba(0, 0, 0, 0.774);
+}
+
 #container #registro {
   display: flex;
   justify-content: center;
@@ -239,7 +271,6 @@
   width: 100%;
   height: 40rem;
   background-color: #fffffe;
-  margin-top: 10rem;
 }
 
 #container #registro .containerForm {
