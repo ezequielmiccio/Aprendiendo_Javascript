@@ -20,11 +20,11 @@ for( let producto of productos ){ // con este ciclo recorremos el array
 
     // += es igual a que se vaya agregando uno tras otro
     cargaProductos.innerHTML += `<div class="tarjets">
-                                 <img src="${producto.img}">
-                                 <h4 class="title">${producto.nombre}</h4>
-                                 <div class="txt">
-                                 <p>$${producto.precio}</p>
-                                 <p class="ahorro">${producto.ahorro}</p>
+                                 <img class="tarjetImg" src="${producto.img}">
+                                 <h4 class="tarjetTitle">${producto.nombre}</h4>
+                                 <div class="tarjetTxt">
+                                 <p class="tarjetPrecio">$${producto.precio}</p>
+                                 <p class="tarjetAhorro">${producto.ahorro}</p>
                                  </div>
                                  <button id="addToCart">Comprar</button>
                                  </div>`
@@ -38,9 +38,47 @@ carrito.forEach(productosSeleccionados => {
     productosSeleccionados.addEventListener('click' , addClicked);
 });
 
-function addClicked
+const addTarjetsRowContainer = document.querySelector('.tarjets');
 
+function addClicked(event) {
+    const button = event.target;
+    console.log('addClicked => button' , button);
+
+   const tarjets = button.closest('.tarjets');
+    console.log('addClicked -> tarjets' , tarjets);
+
+    const tarjetTitle = tarjets.querySelector('.tarjetTitle').textContent;
+
+    const tarjetPrice = tarjets.querySelector('.tarjetPrecio').textContent;
+
+    const tarjetImagen = tarjets.querySelector('.tarjetImg').src;
+
+    addTarjets(tarjetTitle , tarjetPrice , tarjetImagen);
+}
+
+function addTarjets(tarjetTitle , tarjetPrice , tarjetImagen) {
+    const addTarjetsRow = document.createElement('div');
+    const addTarjetsContent = `<div class="tarjets">
+    <img class="tarjetImg" src=${tarjetImagen} >
+    <h4 class="tarjetTitle">${tarjetTitle}</h4>
+    <div class="tarjetTxt">
+    <p class="tarjetPrecio">$${tarjetPrice}</p>
+    </div>
+    <button id="addToCart">Comprar</button>
+    </div>`;
+    
+    addTarjetsRow.innerHTML = addTarjetsContent;
+    addTarjetsRowContainer.append(addTarjetsRow);
+}
 // FIN DOM
+
+
+
+
+
+
+
+
 
 /* function saludar () {
     alert("Sos parte de los primeros 3 clientes, felicidades: " + nombreRegistro + " " + apellidoRegistro + "te otorgamos este codigo de descuento: " + codigoDescuento);

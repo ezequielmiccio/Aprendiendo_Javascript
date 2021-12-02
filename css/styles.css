@@ -132,7 +132,7 @@
   border-radius: 5px;
 }
 
-#container #content #productos .tarjets img {
+#container #content #productos .tarjets .tarjetImg {
   justify-self: start;
   align-self: center;
   box-shadow: 0px 0px 5px #d8d8d8;
@@ -140,7 +140,7 @@
   border-radius: 5px;
 }
 
-#container #content #productos .tarjets .title {
+#container #content #productos .tarjets .tarjetTitle {
   color: white;
   text-align: start;
   margin-left: 1rem;
@@ -150,12 +150,12 @@
   font-weight: 400;
 }
 
-#container #content #productos .tarjets .txt {
+#container #content #productos .tarjets .tarjetTxt {
   margin: 1rem 0rem;
   margin-bottom: 1rem;
 }
 
-#container #content #productos .tarjets .txt p {
+#container #content #productos .tarjets .tarjetTxt p {
   text-align: start;
   justify-self: end;
   font-weight: bold;
@@ -164,7 +164,7 @@
   margin-left: 1rem;
 }
 
-#container #content #productos .tarjets .txt .ahorro {
+#container #content #productos .tarjets .tarjetTxt .tarjetAhorro {
   font-size: 14px;
   color: yellow;
 }
