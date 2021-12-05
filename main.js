@@ -12,6 +12,17 @@ let productos = [
     {nombre: "PES 2020" , precio: "2600" , img: "./assets/img/nba2k20.jpg" , ahorro: "Ahorrá 30%"}
 ]
 
+// STORAGE Y JSON
+
+let productosJSON = JSON.stringify(productos);
+
+localStorage.setItem("productosGuardados" , productosJSON);
+
+let liberarJSON = localStorage.getItem("productosGuardados");
+let resultadoProductos = JSON.parse(liberarJSON);
+
+// FIN STORAGE Y JSON
+
 console.log(productos);
 
 let cargaProductos = document.getElementById("productos");
@@ -58,26 +69,47 @@ function addClicked(event) {
 
 function addTarjets(tarjetTitle , tarjetPrice , tarjetImagen) {
     const addTarjetsRow = document.createElement('div');
-    const addTarjetsContent = `<div class="tarjets">
+    const addTarjetsContent = `<div class="carritoCompras">
     <img class="tarjetImg" src=${tarjetImagen} >
     <h4 class="tarjetTitle">${tarjetTitle}</h4>
     <div class="tarjetTxt">
-    <p class="tarjetPrecio">$${tarjetPrice}</p>
+    <p class="tarjetPrecio">${tarjetPrice}</p>
     </div>
-    <button id="addToCart">Comprar</button>
+    <button id="lowProduct">Eliminar</button>
     </div>`;
     
     addTarjetsRow.innerHTML = addTarjetsContent;
     addTarjetsRowContainer.append(addTarjetsRow);
+
+    compraJuegosTotal();
+}
+
+
+function compraJuegosTotal() {
+
+    let total = 0;
+
+    const compraTotal = document.querySelector('.compraTotal');
+
+    const compraTotalItems = document.querySelectorAll('.compraTotalItem');
+
+    compraTotalItems.forEach(compraTotalItem =>{
+        compraTotalItem.querySelector('.compraTotalItemPrice');
+        
+        const compraTotalItemPrice = Number(compraTotalItemPriceElement.textContent.replace('$' , '')
+        );
+        
+        const compraTotalItemQuantityElement = compraTotalItem.querySelector('.compraTotalItemQuantity');
+        
+        const compraTotalItemQuantity = Number(compraTotalItemQuantityElement.value);
+        
+        total = total + compraTotalItemPrice * compraTotalItemQuantity;
+    });
+
+    compraTotal.innerHTML = `$${total.toFixed(2)}`;
+
 }
 // FIN DOM
-
-
-
-
-
-
-
 
 
 /* function saludar () {
