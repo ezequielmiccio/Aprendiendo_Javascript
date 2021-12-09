@@ -4,6 +4,68 @@ let edadRegistro;
 let ganadorDescuento;
 let codigoDescuento = 1212;
 
+// CREAR OBJETO PARA USUARIOS REGISTRADOS Y DARLES UN CODIGO DE DESCUENTO.
+// HACER FUNCIONAR EL FORM Y CREAR UN LOGIN
+// CREAR SECCION CARRITO DEBAJO DE PRODUCTOS
+
+
+
+
+
+// EVENTOS
+
+window.addEventListener('load' , function() {
+
+    function intervalo(){
+
+        var tiempo = setInterval(function(){
+            console.log("internal ejecutado");
+
+            var encabezado = document.querySelector("#encabezad0");
+
+            if(encabezado.style.fontSize == "50px"){
+                encabezado.style.fontSize = "25px";
+            }else{
+                encabezado.style.fontSize = "50px";
+            }
+        } , 1000);
+
+        return tiempo; // que nos retorne el valor de la funcion INTERVALO entera
+    }
+
+    var tiempo = intervalo();
+
+    var stop = document.querySelector("#stop");
+
+    stop.addEventListener('click' , function(){
+        alert("has pausado el intervalo(tiempo)");
+        clearInterval(tiempo); // para pausar la funcion
+    });
+
+    
+
+    var start = document.querySelector("#start");
+
+    start.addEventListener('click' , function(){
+        alert("has vuelto a iniciar el intervalo(tiempo)");
+        intervalo(); // para iniciar la funcion
+    });
+
+
+});
+
+
+
+
+
+
+
+
+// FIN EVENTOS
+
+
+
+
 // DOM TARJETS DINAMICAS
 
 let productos = [
@@ -11,6 +73,17 @@ let productos = [
     {nombre: "NBA 2k20", precio: "3750" , img: "./assets/img/pes2020.jpg" , ahorro: "Ahorrá 25%"},
     {nombre: "PES 2020" , precio: "2600" , img: "./assets/img/nba2k20.jpg" , ahorro: "Ahorrá 30%"}
 ]
+
+class stockJuegos {
+
+    controlStock() {
+        this.stock = this.stock - 1;
+    }
+
+    getStock(){
+        return this.stock;
+    }
+}
 
 // STORAGE Y JSON
 
@@ -187,26 +260,6 @@ class celular {
     }
 }
 
-celular1 = new celular ("Iphone X" , "HD" , "10px" , "4 GB" , 400, 6);
-celular2 = new celular ("Iphone XS" , "Full HD" , "12px" , "8 GB" , 590, 7);
-celular3 = new celular ("Iphone XS MAX" , "Full HD" , "14px" , "16 GB" , 720, 4);
-
-celular1.presionarBotonEncendido();
-celular1.reiniciar();
-
-celular1.ivaAgregado();
-console.log("El celular: " + celular1.nombre + " tiene un valor final de: " + celular1.ivaAgregado() + " USD");
-
-celular2.ivaAgregado();
-console.log("El celular: " + celular2.nombre + " tiene un valor final de: " + celular2.ivaAgregado() + " USD");
-
-celular3.ivaAgregado();
-console.log("El celular: " + celular3.nombre + " tiene un valor final de: " + celular3.ivaAgregado() + " USD");
-
-
-//
-//
-//
 
 function comprarDescuento () {
 
