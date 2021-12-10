@@ -1,15 +1,17 @@
-let registro = [];
-let apellidoRegistro;
-let edadRegistro;
-let ganadorDescuento;
-let codigoDescuento = 1212;
-
 // CREAR OBJETO PARA USUARIOS REGISTRADOS Y DARLES UN CODIGO DE DESCUENTO.
 // HACER FUNCIONAR EL FORM Y CREAR UN LOGIN
 // CREAR SECCION CARRITO DEBAJO DE PRODUCTOS
 
+let database = [];
+let ganadorDescuento;
+let codigoDescuento = 1212;
 
-
+let addInput = {
+    name:'',
+    lastname:'',
+    dni:'',
+    email:''
+};
 
 
 // EVENTOS
@@ -19,82 +21,68 @@ window.addEventListener('load' , function() {
     function intervalo(){
 
         var tiempo = setInterval(function(){
-            console.log("internal ejecutado");
 
-            var encabezado = document.querySelector("#encabezad0");
+            var luces = document.querySelectorAll(".tarjets");
 
-            if(encabezado.style.fontSize == "50px"){
-                encabezado.style.fontSize = "25px";
+
+            if(luces.style.boxShadow == "0px 0px 8px rgba(71, 71, 71, 0.911)"){
+                luces.style.boxShadow = "1px 1px 25px white";
             }else{
-                encabezado.style.fontSize = "50px";
+                luces.style.boxShadow = "0px 0px 8px rgba(71, 71, 71, 0.911)";
             }
         } , 1000);
 
         return tiempo; // que nos retorne el valor de la funcion INTERVALO entera
     }
 
-    var tiempo = intervalo();
-
-    var stop = document.querySelector("#stop");
-
-    stop.addEventListener('click' , function(){
-        alert("has pausado el intervalo(tiempo)");
-        clearInterval(tiempo); // para pausar la funcion
-    });
-
-    
-
-    var start = document.querySelector("#start");
-
-    start.addEventListener('click' , function(){
-        alert("has vuelto a iniciar el intervalo(tiempo)");
-        intervalo(); // para iniciar la funcion
-    });
-
-
+    // tiempo = intervalo();
 });
 
 
 
 
+/* var stop = document.querySelector("#stop");
+
+stop.addEventListener('click' , function(){
+    alert("has pausado el intervalo(tiempo)");
+    clearInterval(tiempo); // para pausar la funcion
+});
 
 
+
+var start = document.querySelector("#start");
+
+start.addEventListener('click' , function(){
+    alert("has vuelto a iniciar el intervalo(tiempo)");
+    intervalo(); // para iniciar la funcion
+});
+ */
 
 
 // FIN EVENTOS
 
-
-
-
-// DOM TARJETS DINAMICAS
+// ARRAY DE TARJETS DINAMICAS
 
 let productos = [
-    {nombre: "Fifa 20" , precio: "4500" , img: "./assets/img/fifa20.jpg" , ahorro: "Ahorrá 15%"}, // direccion de una imagen cualquiera
-    {nombre: "NBA 2k20", precio: "3750" , img: "./assets/img/pes2020.jpg" , ahorro: "Ahorrá 25%"},
-    {nombre: "PES 2020" , precio: "2600" , img: "./assets/img/nba2k20.jpg" , ahorro: "Ahorrá 30%"}
-]
+    {nombre: "Fifa 20" , precio: "4500" , img: "./assets/img/fifa20.jpg" , ahorro: "15%"},
+    {nombre: "NBA 2k20", precio: "3750" , img: "./assets/img/pes2020.jpg" , ahorro: "25%"},
+    {nombre: "PES 2020" , precio: "2600" , img: "./assets/img/nba2k20.jpg" , ahorro: "30%"}
+];
 
-class stockJuegos {
+// FIN ARRAY DE VIDEOJUEGOS
 
-    controlStock() {
-        this.stock = this.stock - 1;
-    }
 
-    getStock(){
-        return this.stock;
-    }
+
+// FUNCION STOCK
+
+function stockJuegos() {
+
+    this.stock = this.stock - 1;
+    return this.stock;
+
 }
 
-// STORAGE Y JSON
-
-let productosJSON = JSON.stringify(productos);
-
-localStorage.setItem("productosGuardados" , productosJSON);
-
-let liberarJSON = localStorage.getItem("productosGuardados");
-let resultadoProductos = JSON.parse(liberarJSON);
-
-// FIN STORAGE Y JSON
+// FIN FUNCION STOCK
 
 console.log(productos);
 
@@ -108,7 +96,7 @@ for( let producto of productos ){ // con este ciclo recorremos el array
                                  <h4 class="tarjetTitle">${producto.nombre}</h4>
                                  <div class="tarjetTxt">
                                  <p class="tarjetPrecio">$${producto.precio}</p>
-                                 <p class="tarjetAhorro">${producto.ahorro}</p>
+                                 <p class="tarjetAhorro">Ahorrá ${producto.ahorro}</p>
                                  </div>
                                  <button id="addToCart">Comprar</button>
                                  </div>`
@@ -124,8 +112,8 @@ carrito.forEach(productosSeleccionados => {
 
 const addTarjetsRowContainer = document.querySelector('.tarjets');
 
-function addClicked(event) {
-    const button = event.target;
+function addClicked(e) {
+    const button = e.target;
     console.log('addClicked => button' , button);
 
    const tarjets = button.closest('.tarjets');
@@ -185,6 +173,21 @@ function compraJuegosTotal() {
 // FIN DOM
 
 
+// STORAGE Y JSON
+/* 
+let productosJSON = JSON.stringify(productos);
+
+localStorage.setItem("productosGuardados" , productosJSON);
+
+let liberarJSON = localStorage.getItem("productosGuardados");
+let resultadoProductos = JSON.parse(liberarJSON); */
+
+// FIN STORAGE Y JSON
+
+
+
+
+
 /* function saludar () {
     alert("Sos parte de los primeros 3 clientes, felicidades: " + nombreRegistro + " " + apellidoRegistro + "te otorgamos este codigo de descuento: " + codigoDescuento);
 }
@@ -192,11 +195,6 @@ function compraJuegosTotal() {
 alert("Por favor, complete los siguientes datos...");
 
 for(let i = 0 ; i < 3 ; i++){
-
-    nombreRegistro = prompt("Ingrese su nombre");
-    apellidoRegistro = prompt("Ingrese su apellido");
-    edadRegistro = parseInt(prompt("Ingrese su edad"));
-    registro.push(nombreRegistro + " " + apellidoRegistro);
 
     if(nombreRegistro != "ESC"){
         saludar();
@@ -207,58 +205,6 @@ for(let i = 0 ; i < 3 ; i++){
     }
 }
 
-
-console.log(registro);
-alert("Puede probar el producto deseado");
-
-class celular {
-    constructor (nombre , rdp , rdc , ram , precio, stock) {
-
-        this.nombre = nombre;
-        this.resolucionDePantalla = rdp;
-        this.resolucionDeCamara = rdc;
-        this.memoriaRam = ram;
-        this.precio = precio;
-        this.stock = stock;
-        this.encendido = false;
-
-    }
-
-    ivaAgregado() {
-        let iva = this.precio * 0.21;
-        return this.precio + iva;
-    }
-
-    presionarBotonEncendido() {
-        if(this.encendido == false) {
-            alert("Celular Prendido");
-            this.encendido = true;
-        }else {
-            alert("Celular Apagado")
-            this.encendido = false;
-        }
-    }
-
-    reiniciar() {
-        if(this.encendido == true) {
-            alert("Reiniciando Celular");
-        }else {
-            alert("El celular está apagado")
-        }
-    }
-
-    controlStock() {
-        this.stock = this.stock - 1;
-    }
-
-    getStock(){
-        return this.stock;
-    }
-
-    mobileinfo(){
-        return 
-    }
-}
 
 
 function comprarDescuento () {

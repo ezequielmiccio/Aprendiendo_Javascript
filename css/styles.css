@@ -43,12 +43,12 @@
   color: black;
   text-shadow: 1px 1px 0px #ccc;
   text-transform: uppercase;
-  padding-right: 10rem;
+  padding-right: 14rem;
 }
 
 #container #header .logo #logotipo {
-  width: 5rem;
-  height: 5rem;
+  width: 7rem;
+  height: 7.5rem;
 }
 
 #container #header #menu {
@@ -129,8 +129,8 @@
   row-gap: 1rem;
   width: 16rem;
   height: auto;
-  box-shadow: 0px 0px 5px rgba(70, 70, 70, 0.911);
-  background-color: #1b1b1b;
+  box-shadow: 0px 0px 8px rgba(71, 71, 71, 0.911);
+  background-color: #0f0f0f;
   border-radius: 5px;
 }
 
@@ -153,7 +153,7 @@
 }
 
 #container #content #productos .tarjets .tarjetTxt {
-  margin: 1rem 0rem;
+  margin: 0rem 0rem;
   margin-bottom: 1rem;
 }
 

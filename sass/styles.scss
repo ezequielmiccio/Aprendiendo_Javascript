@@ -34,11 +34,11 @@
             color: black;
             text-shadow: 1px 1px 0px #ccc;
             text-transform: uppercase;
-            padding-right: 10rem;
+            padding-right: 14rem;
 
             #logotipo {
-                width: 5rem;
-                height: 5rem;
+                width: 7rem;
+                height: 7.5rem;
             }
         }
 
@@ -126,8 +126,8 @@
                 row-gap: 1rem;
                 width: 16rem;
                 height: auto;
-                box-shadow: 0px 0px 5px rgba(70, 70, 70, 0.911);
-                background-color: rgb(27, 27, 27);
+                box-shadow: 0px 0px 8px rgba(71, 71, 71, 0.911);
+                background-color: rgb(15, 15, 15);
                 border-radius: 5px;
 
                 .tarjetImg {
@@ -149,7 +149,7 @@
                 }
 
                 .tarjetTxt {
-                    margin: 1rem 0rem;
+                    margin: 0rem 0rem;
                     margin-bottom: 1rem;
                     
                     p{
@@ -175,7 +175,7 @@
                     margin-bottom: 1rem;
                     background-color: white;
                     width: 50%;
-                    height: 25%;
+                    height:25%;
                     margin-left: 3.5rem;
                     border-radius: 5px;
                     color: black;
@@ -200,7 +200,7 @@
 
          /* inicio carrito de compras */
 
-         
+
 
 
 
