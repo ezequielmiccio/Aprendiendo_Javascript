@@ -7,11 +7,9 @@
 }
 
 #container {
-  width: 95%;
+  width: 100%;
   height: auto;
-  margin: 1rem auto;
-  border: 1px solid rgba(225, 225, 226, 0.8);
-  box-shadow: 0px 0px 10px #ccc;
+  margin: 0rem auto;
   min-height: 50rem;
   /* fin header - menu*/
   /* inicio contenido tarjetas */
@@ -47,8 +45,8 @@
 }
 
 #container #header .logo #logotipo {
-  width: 7rem;
-  height: 7.5rem;
+  width: 6.5rem;
+  height: 7rem;
 }
 
 #container #header #menu {
@@ -179,7 +177,7 @@
   background-color: white;
   width: 50%;
   height: 25%;
-  margin-left: 3.5rem;
+  margin-left: 4rem;
   border-radius: 5px;
   color: black;
   font-size: 18px;
