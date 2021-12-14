@@ -65,7 +65,7 @@
   width: 50%;
   justify-self: start;
   background-color: #2b2b2b;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.666);
   border-radius: 1rem;
 }
 
@@ -74,6 +74,11 @@
   color: #5c5c5c;
   padding-left: 1rem;
   font-style: italic;
+}
+
+#container #header #menu .search:hover {
+  box-shadow: 0px 0px 10px white;
+  transition: all 500ms;
 }
 
 #container #header #menu ul {
@@ -130,6 +135,11 @@
   box-shadow: 0px 0px 8px rgba(71, 71, 71, 0.911);
   background-color: #0f0f0f;
   border-radius: 5px;
+}
+
+#container #content #productos .tarjets:hover {
+  box-shadow: 0px 0px 7px white;
+  transition: all 500ms;
 }
 
 #container #content #productos .tarjets .tarjetImg {
@@ -203,6 +213,11 @@
   box-shadow: 0px 0px 3px #131212;
 }
 
+#container #content #aside:hover {
+  box-shadow: 0px 0px 10px white;
+  transition: all 500ms;
+}
+
 #container #content #aside h2 {
   display: block;
   width: 100%;
@@ -256,6 +271,12 @@
   width: 40%;
   height: 10%;
   border-radius: 5px;
+  box-shadow: 0px 0px 2px white;
+}
+
+#container #goInfo .containerTxt .goEmail:hover {
+  box-shadow: 0px 0px 10px white;
+  transition: all 500ms;
 }
 
 #container #goInfo .containerTxt .goEmail::placeholder {
@@ -264,19 +285,41 @@
   color: rgba(0, 0, 0, 0.774);
 }
 
+#container #goInfo .containerTxt .goSubmit {
+  width: 10rem;
+  height: 3rem;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#container #goInfo .containerTxt .goSubmit:hover {
+  box-shadow: 0px 0px 7px white;
+  color: white;
+  background-color: black;
+  font-size: 20px;
+  transition: all 500ms;
+}
+
 #container #registro {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 40rem;
-  background-color: #fffffe;
+  height: 45rem;
+  background-color: black;
 }
 
 #container #registro .containerForm {
   width: 35%;
-  height: 38rem;
-  background-color: wheat;
+  height: 40rem;
+  background-color: #1d1d1d;
+  box-shadow: 0px 0px 5px white;
+}
+
+#container #registro .containerForm:hover {
+  box-shadow: 0px 0px 10px white;
+  transition: all 500ms;
 }
 
 #container #registro .containerForm #formulario {
@@ -286,13 +329,32 @@
   justify-content: center;
   text-align: center;
   width: 100%;
-  height: 36rem;
-  row-gap: 5rem;
+  height: 38rem;
+  row-gap: 3.5rem;
+}
+
+#container #registro .containerForm #formulario .buttons {
+  width: 15rem;
+  height: 2rem;
+  box-shadow: 0px 0px 2px white;
+}
+
+#container #registro .containerForm #formulario .buttons:hover {
+  box-shadow: 0px 0px 5px white;
+  transition: 500ms;
+}
+
+#container #registro .containerForm #formulario .buttons::placeholder {
+  text-align: center;
+  font-style: italic;
 }
 
 #container #registro .containerForm #formulario .first .box h6 {
   margin-bottom: 0.8rem;
-  margin-top: 2.5rem;
+  margin-top: 2rem;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: white;
 }
 
 #container #registro .containerForm #formulario .second .box {
@@ -303,6 +365,45 @@
 
 #container #registro .containerForm #formulario .third {
   display: flex;
-  flex-direction: column;
-  row-gap: 0.5rem;
+  flex-direction: row;
+  column-gap: 1.5rem;
+}
+
+#container #registro .containerForm #formulario .third #send {
+  width: 8rem;
+  height: 2.5rem;
+  box-shadow: 0px 0px 2px white;
+}
+
+#container #registro .containerForm #formulario .third #send:hover {
+  box-shadow: 0px 0px 5px white;
+  transition: 500ms;
+}
+
+#container #registro .containerForm #formulario .third #offForm {
+  box-shadow: 0px 0px 2px white;
+  width: 8rem;
+  height: 2.5rem;
+}
+
+#container #registro .containerForm #formulario .third #offForm:hover {
+  box-shadow: 0px 0px 5px white;
+  transition: 500ms;
+}
+
+#container #registro .containerForm #formulario .boxnoti {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 10px;
+}
+
+#container #registro .containerForm #formulario .boxnoti .noti {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+#container #registro .containerForm #formulario h6 {
+  font-size: 18px;
+  color: white;
 }

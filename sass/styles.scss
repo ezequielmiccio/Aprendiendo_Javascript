@@ -60,7 +60,7 @@
                 width: 50%;
                 justify-self: start;
                 background-color: rgb(43, 43, 43);
-                border: none;
+                border: 1px solid rgba(255, 255, 255, 0.666);
                 border-radius: 1rem;
 
                 &::placeholder{
@@ -68,6 +68,11 @@
                     color: rgb(92, 92, 92);
                     padding-left: 1rem;
                     font-style: italic;
+                }
+
+                &:hover {
+                    box-shadow: 0px 0px 10px white;
+                    transition: all 500ms;
                 }
             }
             
@@ -127,6 +132,11 @@
                 box-shadow: 0px 0px 8px rgba(71, 71, 71, 0.911);
                 background-color: rgb(15, 15, 15);
                 border-radius: 5px;
+
+                &:hover {
+                    box-shadow: 0px 0px 7px white;
+                    transition: all 500ms;
+                }
 
                 .tarjetImg {
                     justify-self: start;
@@ -217,6 +227,11 @@
             background-color: #2222;
             box-shadow: 0px 0px 3px rgb(19, 18, 18);
 
+            &:hover {
+                box-shadow: 0px 0px 10px white;
+                transition: all 500ms;
+            }
+
             h2{
                 display: block;
                 width: 100%;
@@ -276,11 +291,33 @@
                 width: 40%;
                 height: 10%;
                 border-radius: 5px;
+                box-shadow: 0px 0px 2px white;
+
+                &:hover {
+                    box-shadow: 0px 0px 10px white;
+                    transition: all 500ms;
+                }
 
                 &::placeholder{
                     font-size: 18px;
                     padding-left: 1rem;
                     color: rgba(0, 0, 0, 0.774);
+                }
+            }
+
+            .goSubmit {
+                width: 10rem;
+                height: 3rem;
+                font-size: 18px;
+                font-weight: bold;
+                text-transform: uppercase;
+
+                &:hover {
+                    box-shadow: 0px 0px 7px white;
+                    color: white;
+                    background-color: black;
+                    font-size: 20px;
+                    transition: all 500ms;
                 }
             }
         }
@@ -302,13 +339,20 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 40rem;
-        background-color: rgb(255, 255, 254);
+        height: 45rem;
+        background-color: black;
 
             .containerForm {
                 width: 35%;
-                height: 38rem;
-                background-color: wheat;
+                height: 40rem;
+                background-color: rgb(29, 29, 29);
+                box-shadow: 0px 0px 5px white;
+                
+                &:hover {
+                    box-shadow: 0px 0px 10px white;
+                    transition: all 500ms;
+                }
+
                 #formulario {
                     display: flex;
                     flex-direction: column;
@@ -316,15 +360,33 @@
                     justify-content: center;
                     text-align: center;
                     width: 100%;
-                    height: 36rem;
-                    row-gap:5rem;
+                    height: 38rem;
+                    row-gap: 3.5rem;
 
+                    .buttons {
+                        width: 15rem;
+                        height: 2rem;
+                        box-shadow: 0px 0px 2px white;
+
+                        &:hover{
+                            box-shadow: 0px 0px 5px white;
+                            transition: 500ms;
+                        }
+
+                        &::placeholder {
+                            text-align: center;
+                            font-style: italic;
+                        }
+                    }
 
                     .first {
                         .box {
                             h6 {
                                 margin-bottom: 0.8rem;
-                                margin-top: 2.5rem;
+                                margin-top: 2rem;
+                                font-size: 18px;
+                                text-transform: uppercase;
+                                color: white;
                             }
                             
                         }
@@ -340,11 +402,54 @@
 
                     .third {
                         display: flex;
-                        flex-direction: column;
-                        row-gap: 0.5rem;
+                        flex-direction: row;
+                        column-gap: 1.5rem;
+                        
+
+                        #send{
+                            width: 8rem;
+                            height: 2.5rem;
+                            box-shadow: 0px 0px 2px white;
+
+                            &:hover{
+                                box-shadow: 0px 0px 5px white;
+                                transition: 500ms;
+                            }
+                        }
+    
+                        #offForm{
+                            box-shadow: 0px 0px 2px white;
+                            width: 8rem;
+                            height: 2.5rem;
+
+                            &:hover{
+                                box-shadow: 0px 0px 5px white;
+                                transition: 500ms;
+                            }
+                        }
                     }
+
+                    .boxnoti {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        column-gap: 10px;
+
+                        .noti {
+                            width: 1.2rem;
+                            height: 1.2rem;
+                        }
+
+                    }
+
+                    h6 {
+                        font-size: 18px;
+                        color: white;
+                    }
+                    
                 }
             }
+
             
         }
         /* fin formulario */

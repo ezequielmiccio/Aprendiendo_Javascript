@@ -1,17 +1,80 @@
 // CREAR OBJETO PARA USUARIOS REGISTRADOS Y DARLES UN CODIGO DE DESCUENTO.
 // HACER FUNCIONAR EL FORM Y CREAR UN LOGIN
 // CREAR SECCION CARRITO DEBAJO DE PRODUCTOS
+// BUTTON DE BOTON PARA PPONER CAMBIAR DE   BACKDROUND BLACK A BACKGROUND WHITE
 
-let database = [];
+
 let ganadorDescuento;
 let codigoDescuento = 1212;
 
-let addInput = {
-    name:'',
-    lastname:'',
-    dni:'',
-    email:''
-};
+
+let database = [];
+
+// OBJETO
+
+let inputValues = {
+    name:"",
+    lastname:"",
+    dni:"",
+    email:""
+}
+
+// FIN OBJETO
+
+// FUNCIONES
+
+// FUNCION 1: con handleInput vamos a capturar los datos del formulario.
+
+console.log("aca estan los " + Object.values(inputValues))
+
+const handleInput = (e) => { 
+
+    inputValues = {
+        ...inputValues,
+        [e.target.name]:e.target.value
+    }
+
+    console.log(inputValues)
+}
+
+// FUN FUNCION 1: hundleInput
+
+// FUNCION 2: handleSubmit
+
+const handleSubmit = e => {
+
+    //el preventDefault es necesario en los submits para que no se actualice la página cuándo lo carguemos
+    e.preventDefault();
+ 
+/*     if(Object.values(inputValues).includes("")) {
+        console.log('¡Completa los datos!');
+        return;
+    } */
+
+    database.push(inputValues);
+    console.log(database);
+
+    form.reset();
+}
+
+// FIN FUNCION 2: handleSubmit
+
+
+// DOM
+
+// capturamos todas las clases '.buttons' en "botones"
+// forEach para poder agregar ya el addEventListener ya que no puede ir enganchado de un array directo. Y así recorremos todos los '.buttons'
+// para capturar el formulario (el querySelector solo trae la primer clase)
+
+const botones = document.querySelectorAll('.buttons');
+
+botones.forEach(input => input.addEventListener('input' , inputValues));
+
+const form = document.querySelector('#formulario');
+form.addEventListener('submit' , handleSubmit);
+
+// FIN DOM
+
 
 
 // EVENTOS
