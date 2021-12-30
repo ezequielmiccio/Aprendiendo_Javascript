@@ -11,6 +11,7 @@ class Producto{
         this.img = img;
         this.ahorro = ahorro;
         this.precio = precio;
+        this.info = info;
     }
 
     card(){
@@ -24,11 +25,12 @@ class Producto{
             </div>
 
             <button data-id=${this.id} class="addToCart">Comprar</button>
+            <button class="addToInfo">Ver más</button>
 
         </div>`
     }
-}
 
+}
 
 class Tienda {
     constructor(){

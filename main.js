@@ -106,9 +106,7 @@ console.log(carrito);
 // STORAGE Y JSON
 /* 
 let productosJSON = JSON.stringify(productos);
-
 localStorage.setItem("productosGuardados" , productosJSON);
-
 let liberarJSON = localStorage.getItem("productosGuardados");
 let resultadoProductos = JSON.parse(liberarJSON); */
 
@@ -120,11 +118,19 @@ $(".infoProduct").hide();
 $(".vermenos").hide();
 
 $(".addToInfo").on("click" , function(){
-    $(".infoProduct").toggle();
-    $(".vermenos").toggle();
+    $(".addToInfo").hide();
+    $(".infoProduct").slideDown(800);
+    $(".vermenos").show();
 });
 
-$(".tarjets").on("mouseleave" , function(){
+/* $(".tarjets").on("mouseleave" , function(){
+    $(".addToInfo").show();
     $(".infoProduct").hide();
     $(".vermenos").hide();
 });
+ */
+$(".vermenos").click(function(){
+    $(".vermenos").hide();
+    $(".infoProduct").hide();
+    $(".addToInfo").show();
+})
