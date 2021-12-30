@@ -117,7 +117,11 @@ let resultadoProductos = JSON.parse(liberarJSON); */
 
 $(".infoProduct").hide();
 
-$(".addToInfo").on("click" , function(){
+$(".addToInfo").on("mouseenter" , function(){
     $(".infoProduct").toggle();
+    $(".infoProduct").append(`<button class="vermenos">Ver menos</button>`)
+});
 
+$(".addToInfo").on("mouseleave" , function(){
+    $(".infoProduct").hide();
 });
