@@ -88,7 +88,8 @@ for( let producto of productos ){ // con este ciclo recorremos el array
                                  </div>
                                  <button data-id=${producto.id} class="addToCart">Comprar</button>
                                  <button class="addToInfo">Ver más</button>
-                                    <p class="infoProduct">${producto.info}</p>
+                                 <p class="infoProduct">${producto.info}</p>
+                                 <button class="vermenos">Ver menos</button>
                                  </div>`
 }
 
@@ -116,12 +117,14 @@ let resultadoProductos = JSON.parse(liberarJSON); */
 // JQUERY: EVENTOS
 
 $(".infoProduct").hide();
+$(".vermenos").hide();
 
-$(".addToInfo").on("mouseenter" , function(){
+$(".addToInfo").on("click" , function(){
     $(".infoProduct").toggle();
-    $(".infoProduct").append(`<button class="vermenos">Ver menos</button>`)
+    $(".vermenos").toggle();
 });
 
-$(".addToInfo").on("mouseleave" , function(){
+$(".tarjets").on("mouseleave" , function(){
     $(".infoProduct").hide();
+    $(".vermenos").hide();
 });
