@@ -25,7 +25,10 @@ class Producto{
             </div>
 
             <button data-id=${this.id} class="addToCart">Comprar</button>
+            
             <button class="addToInfo">Ver más</button>
+            <button class="vermenos">Ver menos</button>
+            <p class="infoProduct">${this.info}</p>
 
         </div>`
     }
