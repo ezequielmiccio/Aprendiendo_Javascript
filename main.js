@@ -119,7 +119,7 @@ $(".vermenos").hide();
 
 $(".addToInfo").on("click" , function(){
     $(".addToInfo").hide();
-    $(".infoProduct").slideDown(800);
+    $(".infoProduct").slideDown(300);
     $(".vermenos").show();
 });
 

@@ -5,7 +5,7 @@ let productos = [
 ];
 
 class Producto{
-    constructor({id, nombre, img, ahorro, precio}) {
+    constructor({id, nombre, img, ahorro, precio, info}) {
         this.id = id;
         this.nombre = nombre;
         this.img = img;
@@ -52,7 +52,7 @@ class Tienda {
         arrayDeProductos.forEach(producto => this.addProducto(producto));
     }
 
-    render(divDestino, listado=this.stock){
+    render(divDestino, listado=this.stock){        
         let divProductos = document.getElementById(divDestino);
         divProductos.innerHTML="";
         divProductos.innerHTML=listado.map(producto => producto.card()).join("");
