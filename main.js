@@ -84,7 +84,7 @@ $(".vermenos").click(function(){
     $(".addToInfo").show();
 });
 
-// DOM OFERTAS EMAIL
+// DOM: ENVIAR EMAIL POR REGISTRO OFERTAS
 
     $(".containerHide").hide();
 
@@ -94,6 +94,16 @@ $(".vermenos").click(function(){
         var email = document.querySelector("#goEmail").value;
         console.log(email)
 
+        var parrafo = document.createElement("p");
+        parrafo.innerHTML=`<p>Hemos enviado un email a <b>${email}</b>, por favor verifica los datos.</p>
+                            
+                            <h4>Equipo KongStore</h4>`;
+
+        var mensaje = document.querySelector(".pEmail");
+        mensaje.append(parrafo);
+
         $(".containerHide").show();
 
     });
+
+// FIN DOM: ENVIAMOS EMAIL POR REGISTRO
