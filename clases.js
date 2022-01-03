@@ -33,7 +33,7 @@ class Producto{
 
             <div class="tarjetTxt">
                 <p class="tarjetPrecio">$${this.precio}</p>
-                <p class="tarjetAhorro">Ahorrá ${this.ahorro}</p>
+                <p class="tarjetAhorro">${this.ahorro} OFF</p>
             </div>
 
             <button data-id=${this.id} class="addToCart">Comprar</button>
