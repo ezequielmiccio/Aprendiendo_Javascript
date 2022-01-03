@@ -74,14 +74,8 @@ $(".vermenos").hide();
 
 $(".addToInfo").on("click" , function(){
     $(".addToInfo").hide();
-    $(".infoProduct").slideDown(300);
+    $(".infoProduct").show(300);
     $(".vermenos").show();
-});
-
-$("#productos").on("mouseleave" , function(){
-    $(".addToInfo").show();
-    $(".infoProduct").hide();
-    $(".vermenos").hide();
 });
 
 $(".vermenos").click(function(){
@@ -89,3 +83,17 @@ $(".vermenos").click(function(){
     $(".infoProduct").hide();
     $(".addToInfo").show();
 });
+
+// DOM OFERTAS EMAIL
+
+    $(".containerHide").hide();
+
+    var goEmail = document.querySelector("#containerTxt");
+    goEmail.addEventListener("submit" , function(){
+
+        var email = document.querySelector("#goEmail").value;
+        console.log(email)
+
+        $(".containerHide").show();
+
+    });

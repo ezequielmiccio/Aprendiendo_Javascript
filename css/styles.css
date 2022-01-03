@@ -13,10 +13,11 @@
   min-height: 50rem;
   /* fin header - menu*/
   /* inicio contenido tarjetas */
+  /* INICIO CARRITO JS */
+  /* FIN CARRITO DE JS */
   /* inicio registro */
   /* fin registro */
   /* inicio formulario */
-  /* fin formulario */
 }
 
 #container #header {
@@ -100,7 +101,7 @@
 }
 
 #container #header #menu ul a:hover {
-  background-color: rgba(255, 68, 0, 0.904);
+  box-shadow: 0px 0px 10px white;
   border-radius: 5px;
   color: white;
 }
@@ -113,24 +114,23 @@
   background-color: #0f0f0f;
   /* inicio productos */
   /* fin productos */
-  /* inicio carrito de compras */
-  /* fin carrito de compras */
   /* inicio aside */
   /* fin aside */
 }
 
 #container #content #productos {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
+  row-gap: 3rem;
   justify-content: space-evenly;
   flex-basis: 80%;
+  height: auto;
 }
 
 #container #content #productos .tarjets {
   display: flex;
   flex-direction: column;
-  row-gap: 1rem;
-  width: 16rem;
+  width: 15rem;
   height: auto;
   box-shadow: 0px 0px 8px rgba(71, 71, 71, 0.911);
   background-color: #0f0f0f;
@@ -146,23 +146,20 @@
   justify-self: start;
   align-self: center;
   box-shadow: 0px 0px 5px #d8d8d8;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   border-radius: 5px;
 }
 
 #container #content #productos .tarjets .tarjetTitle {
   color: white;
   text-align: start;
-  margin-left: 1rem;
-  justify-self: end;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
-}
-
-#container #content #productos .tarjets .tarjetTxt {
-  margin: 0rem 0rem;
-  margin-bottom: 1rem;
+  font-family: "Staatliches", "cursive";
+  letter-spacing: 1px;
+  margin-left: 0.5rem;
 }
 
 #container #content #productos .tarjets .tarjetTxt p {
@@ -170,8 +167,11 @@
   justify-self: end;
   font-weight: bold;
   color: white;
+  margin-left: 0.5rem;
+  font-family: "Staatliches", "cursive";
   font-size: 22px;
-  margin-left: 1rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
 }
 
 #container #content #productos .tarjets .tarjetTxt .tarjetAhorro {
@@ -180,31 +180,41 @@
 }
 
 #container #content #productos .tarjets button {
+  display: block;
+  font-family: "Staatliches", "cursive";
+  font-size: 20px;
   text-align: center;
   line-height: 2.5rem;
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   background-color: white;
   width: 50%;
   height: 25%;
-  margin-left: 4rem;
+  margin-left: 3.8rem;
+  margin-top: 00.5rem;
   border-radius: 5px;
   color: black;
-  font-size: 18px;
   font-weight: bold;
 }
 
 #container #content #productos .tarjets button:hover {
-  background: orangered;
+  background: black;
+  box-shadow: 0px 0px 8px white;
   border-radius: 5px;
-  font-weight: 900;
   color: white;
+  font-size: 22px;
   transition: all 300ms;
 }
 
+#container #content #productos .tarjets .infoProduct {
+  text-align: center;
+  color: white;
+  font-size: 15px;
+  padding: 0.5rem;
+}
+
 #container #content #aside {
-  flex-basis: 15%;
-  margin-right: 2rem;
+  flex-basis: 20%;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -228,10 +238,15 @@
   margin-bottom: 1rem;
   border-bottom: 1px solid rgba(225, 225, 226, 0.8);
   text-align: center;
+  font-family: "Staatliches", "cursive";
+  font-size: 25px;
+  letter-spacing: 1px;
 }
 
 #container #content #aside ul li {
+  margin-top: 3rem;
   padding-bottom: 1.5rem;
+  width: 12.5rem;
 }
 
 #container #content #aside a {
@@ -243,6 +258,10 @@
   color: #444;
   transition: all 300ms;
   text-transform: uppercase;
+  text-decoration: none;
+  font-family: "Staatliches", "cursive";
+  font-size: 20px;
+  letter-spacing: 1px;
 }
 
 #container #content #aside a:hover {
@@ -250,12 +269,81 @@
   color: #eee;
 }
 
+#container #carrito {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  background: black;
+  padding: 2rem;
+}
+
+#container #carrito .tarjets {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-around;
+}
+
+#container #carrito .tarjets .tarjetImg {
+  height: 6rem;
+  width: 4.5rem;
+}
+
+#container #carrito .tarjets .tarjetTitle {
+  align-self: center;
+  color: white;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: "Staatliches", "cursive";
+  letter-spacing: 1px;
+}
+
+#container #carrito .tarjets .tarjetTxt {
+  align-self: center;
+}
+
+#container #carrito .tarjets .tarjetTxt .tarjetPrecio {
+  color: white;
+  font-size: 20px;
+  font-family: "Staatliches", "cursive";
+  letter-spacing: 1px;
+}
+
+#container #carrito .tarjets .tarjetAhorro {
+  display: none;
+}
+
+#container #carrito .addToCart {
+  display: none;
+}
+
+#container #carrito .addToInfo {
+  display: none;
+}
+
+#container #carrito .vermenos {
+  display: none;
+}
+
+#container #carrito .infoProduct {
+  display: none;
+}
+
 #container #goInfo {
   margin: 2px 0;
   min-height: 20rem;
 }
 
-#container #goInfo .containerTxt {
+#container #goInfo .containerHide {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 15rem;
+  height: 10rem;
+  border: 2px solid cyan;
+}
+
+#container #goInfo #containerTxt {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -267,33 +355,53 @@
   color: white;
 }
 
-#container #goInfo .containerTxt .goEmail {
+#container #goInfo #containerTxt .pretitle {
+  font-family: "Staatliches", "cursive";
+  font-size: 45px;
+  letter-spacing: 2px;
+}
+
+#container #goInfo #containerTxt .titleTxt {
+  font-family: "Staatliches", "cursive";
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+
+#container #goInfo #containerTxt .pTxt {
+  font-family: "Staatliches", "cursive";
+  letter-spacing: 1px;
+}
+
+#container #goInfo #containerTxt #goEmail {
   width: 40%;
   height: 10%;
   border-radius: 5px;
   box-shadow: 0px 0px 2px white;
 }
 
-#container #goInfo .containerTxt .goEmail:hover {
+#container #goInfo #containerTxt #goEmail:hover {
   box-shadow: 0px 0px 10px white;
   transition: all 500ms;
 }
 
-#container #goInfo .containerTxt .goEmail::placeholder {
+#container #goInfo #containerTxt #goEmail::placeholder {
   font-size: 18px;
   padding-left: 1rem;
-  color: rgba(0, 0, 0, 0.774);
+  color: rgba(36, 36, 36, 0.774);
+  font-style: italic;
 }
 
-#container #goInfo .containerTxt .goSubmit {
+#container #goInfo #containerTxt #goSubmit {
   width: 10rem;
   height: 3rem;
-  font-size: 18px;
+  font-size: 20px;
+  letter-spacing: 1px;
   font-weight: bold;
   text-transform: uppercase;
+  font-family: "Staatliches", "cursive";
 }
 
-#container #goInfo .containerTxt .goSubmit:hover {
+#container #goInfo #containerTxt #goSubmit:hover {
   box-shadow: 0px 0px 7px white;
   color: white;
   background-color: black;
@@ -308,12 +416,13 @@
   width: 100%;
   height: 45rem;
   background-color: black;
+  /* fin formulario */
 }
 
 #container #registro .containerForm {
-  width: 35%;
+  width: auto;
   height: 40rem;
-  background-color: #1d1d1d;
+  background-color: #050505;
   box-shadow: 0px 0px 5px white;
 }
 
@@ -326,10 +435,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
   width: 100%;
-  height: 38rem;
+  height: 40rem;
   row-gap: 3.5rem;
 }
 
@@ -347,6 +455,9 @@
 #container #registro .containerForm #formulario .buttons::placeholder {
   text-align: center;
   font-style: italic;
+  font-family: "Staatliches", "cursive";
+  font-size: 15px;
+  letter-spacing: 1px;
 }
 
 #container #registro .containerForm #formulario .first .box h6 {
@@ -355,12 +466,35 @@
   font-size: 18px;
   text-transform: uppercase;
   color: white;
+  font-family: "Staatliches", "cursive";
+  font-size: 20px;
+  letter-spacing: 1px;
 }
 
 #container #registro .containerForm #formulario .second .box {
   display: flex;
   flex-direction: row;
   column-gap: 0.5rem;
+}
+
+#container #registro .containerForm #formulario #consulta {
+  width: 20rem;
+  height: 10rem;
+  box-shadow: 0px 0px 2px white;
+  margin: 0 1rem;
+}
+
+#container #registro .containerForm #formulario #consulta:hover {
+  box-shadow: 0px 0px 10px white;
+  transition: all 500ms;
+}
+
+#container #registro .containerForm #formulario #consulta::placeholder {
+  text-align: center;
+  font-style: italic;
+  font-family: "Staatliches", "cursive";
+  font-size: 15px;
+  letter-spacing: 1px;
 }
 
 #container #registro .containerForm #formulario .third {
@@ -373,22 +507,34 @@
   width: 8rem;
   height: 2.5rem;
   box-shadow: 0px 0px 2px white;
+  font-family: "Staatliches", "cursive";
+  font-size: 20px;
+  letter-spacing: 1px;
 }
 
 #container #registro .containerForm #formulario .third #send:hover {
   box-shadow: 0px 0px 5px white;
-  transition: 500ms;
+  background: black;
+  color: white;
+  font-size: 22px;
+  transition: all 500ms;
 }
 
 #container #registro .containerForm #formulario .third #offForm {
   box-shadow: 0px 0px 2px white;
   width: 8rem;
   height: 2.5rem;
+  font-family: "Staatliches", "cursive";
+  font-size: 20px;
+  letter-spacing: 1px;
 }
 
 #container #registro .containerForm #formulario .third #offForm:hover {
   box-shadow: 0px 0px 5px white;
-  transition: 500ms;
+  background: black;
+  color: white;
+  font-size: 22px;
+  transition: all 500ms;
 }
 
 #container #registro .containerForm #formulario .boxnoti {
@@ -406,4 +552,139 @@
 #container #registro .containerForm #formulario h6 {
   font-size: 18px;
   color: white;
+}
+
+#container footer {
+  border-top: 1px solid rgba(187, 187, 187, 0.438);
+}
+
+#container footer .firstColumn {
+  max-width: 1440px;
+}
+
+#container footer .firstColumn .firstRow h2 {
+  font-family: "Staatliches", "cursive";
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+#container footer .firstColumn .firstRow h2 a {
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: white;
+}
+
+#container footer .firstColumn .firstRow h2:hover > a {
+  color: cyan;
+  transition: 300ms;
+}
+
+#container footer .firstColumn .firstRow h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 0.6rem;
+  text-decoration: none;
+  letter-spacing: 1px;
+  color: white;
+  cursor: pointer;
+}
+
+#container footer .firstColumn .firstRow h3:hover {
+  color: cyan;
+  transition: 300ms;
+}
+
+#container footer .firstColumn .secondRow h2 {
+  font-family: "Staatliches", "cursive";
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+#container footer .firstColumn .secondRow h2 a {
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: white;
+}
+
+#container footer .firstColumn .secondRow h2:hover > a {
+  color: cyan;
+  transition: 300ms;
+}
+
+#container footer .firstColumn .secondRow h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 0.6rem;
+}
+
+#container footer .firstColumn .secondRow h3 a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+}
+
+#container footer .firstColumn .secondRow h3:hover > a {
+  color: cyan;
+  transition: 300ms;
+}
+
+#container footer .firstColumn .thirdRow h2 {
+  font-family: "Staatliches", "cursive";
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+#container footer .firstColumn .thirdRow h2 a {
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: white;
+}
+
+#container footer .firstColumn .thirdRow h2 a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+}
+
+#container footer .firstColumn .thirdRow h2:hover > a {
+  color: cyan;
+  transition: 300ms;
+}
+
+#container footer .firstColumn .fortyRow .btnTitle {
+  text-align: center;
+  margin-left: 7.5rem;
+}
+
+#container footer .firstColumn .fortyRow .btnTitle h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+#container footer .firstColumn .fortyRow .btnImages .icon {
+  font-size: 2rem;
+  color: white;
+  width: 3rem;
+}
+
+#container footer .firstColumn .fortyRow .btnImages .icon:hover {
+  font-size: 2.2rem;
+  color: cyan;
+  transition: 300ms;
+}
+
+#container footer .secondColumn .firstRow p {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+}
+
+#container footer .secondColumn .secondRow div p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.6rem;
+  font-weight: bold;
+  text-align: end;
 }
