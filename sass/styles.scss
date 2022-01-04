@@ -139,6 +139,7 @@ $font-miccio: "Staatliches", "cursive";
                 &:hover {
                     box-shadow: 0px 0px 7px white;
                     transition: all 500ms;
+                    background-color: rgb(0, 0, 0);
                 }
 
                 .tarjetImg {
@@ -362,11 +363,11 @@ $font-miccio: "Staatliches", "cursive";
 
         .containerHide{
             position: absolute;
-            top: 30%;
+            top: 40%;
             left: 25%;
             width: 50%;
             height: 15rem;
-            background-color: rgb(41, 41, 41);
+            background-color: rgb(20, 20, 20);
             color: white;
             padding-bottom: 1rem;
 
@@ -389,7 +390,7 @@ $font-miccio: "Staatliches", "cursive";
 
                 b{
                    font-style: italic;
-                   font-size: 18px;
+                   font-size: 20px;
                    color: yellow;
                    font-family: Arial, Helvetica, sans-serif;
                    letter-spacing: 0px;
@@ -488,6 +489,7 @@ $font-miccio: "Staatliches", "cursive";
 
 
     #registro {
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -496,10 +498,74 @@ $font-miccio: "Staatliches", "cursive";
         background-color: black;
 
         .containerForm {
+            display: block;
             width: auto;
-            height: 40rem;
+            height: auto;
             background-color: rgb(5, 5, 5);
             box-shadow: 0px 0px 5px white;
+            padding-bottom: 1.8rem;
+
+            /* cartel */
+
+            .consultaHide{
+                position: absolute;
+                top: 30%;
+                left: 25%;
+                width: 50%;
+                height: 15rem;
+                background-color: rgb(20, 20, 20);
+                color: white;
+                padding-bottom: 1rem;
+    
+                .txtConsulta {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    justify-content: center;
+                    width: 100%;
+                    height: 15rem;
+                
+                    border: 3px solid white;
+                    box-shadow: 0px 0px 8px white;
+    
+                    h3{
+                        font-family: $font-miccio;
+                        line-height: 5rem;
+                    }
+    
+                    b{
+                       font-size: 18px;
+                       font-family: $font-miccio;
+                       letter-spacing: 1px;
+                       text-transform: uppercase;
+                    }
+
+                    .estiloEmail{
+                        font-size: 18px;
+                        color: yellow;
+                        font-family: Arial, Helvetica, sans-serif;
+                        letter-spacing: 0px;
+                        font-style: italic;
+                        text-transform: none;
+
+                    }
+    
+                    p{
+                        font-family: $font-miccio;
+                        letter-spacing: 1px;
+                    }
+    
+                    h4{
+                        font-size: 15px;
+                        margin-top: 3rem;
+                        font-family: $font-miccio;
+                        letter-spacing: 1px;
+                    }
+                }
+            }
+
+            /* fin cartel */
 
             &:hover {
                 box-shadow: 0px 0px 10px white;
@@ -536,7 +602,9 @@ $font-miccio: "Staatliches", "cursive";
 
                 .first {
                     .box {
-                        h6 {
+                        display: flex;
+                        flex-direction: column;
+                        label {
                             margin-bottom: 0.8rem;
                             margin-top: 2rem;
                             font-size: 18px;
@@ -550,15 +618,8 @@ $font-miccio: "Staatliches", "cursive";
                     }
                 }
 
-                .second {
-                    .box {
-                        display: flex;
-                        flex-direction: row;
-                        column-gap: 0.5rem;
-                    }
-                }
-
                 #consulta {
+                    text-align: start;
                     width: 20rem;
                     height: 10rem;
                     box-shadow: 0px 0px 2px white;

@@ -126,14 +126,14 @@
                     <h2 class="pretitle">Kong Store</h2>
                     <h3 class="titleTxt">Recibí todas las ofertas</h3>
                     <p class="pTxt">¿Querés recibir nuestras ofertas? ¡Registrate ya mismo y disfrutalas!</p>
-                    <input type="email" id="goEmail" placeholder="Email" name="email">
+                    <input type="email" id="goEmail" placeholder="Email" name="email" required>
                     <input type="submit" value="registrarme" name="registro" id="goSubmit"></input>
                 </form>
 
                 <div class="containerHide">
                     <div class="hideTxt">
                         <h3>¡Muchas gracias por registrarte!</h3>
-                        <p class="pEmail"></p>
+                        <div class="pEmail"></div>
                     </div>
 
                 </div>
@@ -146,33 +146,26 @@
 
         <section id="registro">
             <div class="containerForm">
-                <form action="form" id="formulario">
+                <form action="form" id="formulario" onsubmit="return false;">
 
                     <div class="first">
                         <div class="box">
-                            <h6 for="name">Ingrese su nombre</h6>
-                            <input type="text" name="name" id="nombreUsuario" class="buttons" placeholder="Escriba aquí"
+                            <label for="name">Ingrese su nombre</label>
+                            <input type="text" name="name" id="firstName" class="buttons" placeholder="Escriba aquí"
                                 required>
                         </div>
 
                         <div class="box">
-                            <h6 for="lastname">Ingrese su apellido</h6>
-                            <input type="text" name="lastname" id="passUsuario" class="buttons"
+                            <label for="lastname">Ingrese su apellido</label>
+                            <input type="text" name="lastname" id="lastName" class="buttons"
                                 placeholder="Escriba aquí" required>
                         </div>
 
                         <div class="box">
-                            <h6 for="dni" class="d-none">Ingrese su DNI</h6>
-                            <input type="text" name="dni" id="dniUsuario" class="buttons d-none"
-                                placeholder="Escriba aquí" required>
-                        </div>
-
-                        <div class="box">
-                            <h6 for="email">Ingrese su e-mail</h6>
+                            <label for="email">Ingrese su e-mail</label>
                             <input type="email" name="email" id="emailUsuario" class="buttons"
                                 placeholder="*****@***.com" required>
                         </div>
-
 
                     </div>
 
@@ -190,20 +183,33 @@
                         </div>
 
                         <div class="box">
-                            <input type="reset" value="Salir" id="offForm">
+                            <input type="reset" value="Limpiar" id="offForm">
                         </div>
                     </div>
 
                     <!-- fin enviar -->
+
                 </form>
 
+                <!-- fin form -->
+
+                <!-- inicio cartel hide -->
+
+                <div class="consultaHide">
+                    <div class="txtConsulta">
+                        <h3>¡Tu consulta se ha realizado con éxito!</h3>
+                        <div class="pConsulta"></d>
+                    </div>
+
+                    <!-- fin cartel hide -->
+
+                </div>
+
             </div>
+
         </section>
 
         <!-- fin formulario -->
-
-
-
 
         <!-- inicio footer bootstrap -->
 

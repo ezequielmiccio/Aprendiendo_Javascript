@@ -25,24 +25,24 @@ let inputValues = Object.freeze({
 
 // FUNCION 1: con handleInput vamos a capturar los datos del formulario.
 
-const handleInput = (e) => { 
+/* const handleInput = (e) => { 
 
     inputValues = {
         ...inputValues,
         [e.target.name]:e.target.value
     }
 
-}
+} */
 
 // FUN FUNCION 1: hundleInput
 
 // FUNCION 2: handleSubmit
 
-const handleSubmit = e => {
+/* const handleSubmit = e => {
     e.preventDefault();
     database.push(inputValues);
     form.reset();
-}
+} */
 
 // FIN FUNCION 2: handleSubmit
 
@@ -50,13 +50,6 @@ const handleSubmit = e => {
 
 // capturamos todas las clases '.buttons' en "botones"
 // forEach para poder agregar ya el addEventListener ya que no puede ir enganchado de un array directo. Y así recorremos todos los '.buttons'
-
-const inputs = document.querySelectorAll('input.buttons');
-
-inputs.forEach(input => input.addEventListener('change' , handleInput));
-
-const form = document.querySelector('#formulario');
-form.addEventListener('submit' , handleSubmit);
 
 // FIN DOM
 
@@ -102,8 +95,31 @@ $(".vermenos").click(function(){
         var mensaje = document.querySelector(".pEmail");
         mensaje.append(parrafo);
 
-        $(".containerHide").show();
+        $(".containerHide").fadeIn(200);
 
     });
 
 // FIN DOM: ENVIAMOS EMAIL POR REGISTRO
+
+// JQUERY PARA EL FORMULARIO DE MENSAJE
+
+$(".consultaHide").hide();
+
+$(".containerForm").on("submit" , function(e){
+
+    e.preventDefault;
+
+    var nombre = $("#firstName").val();
+    var apellido = $("#lastName").val();
+    var emailConsulta = $("#emailUsuario").val();
+    console.log(nombre, apellido, emailConsulta)
+
+    $(".pConsulta").append(`<p>¡Hola, <b>${nombre} ${apellido}</b>!, nos comunicaremos con usted brevemente. Nuestro equipo de atención al cliente se comunicará a <b class="estiloEmail">${emailConsulta}</b>. Gracias por su tiempo.</p>
+                            
+    <h4>Equipo KongStore</h4>`);
+
+    $(".consultaHide").fadeIn(200);
+
+});
+
+// FIN FORM CON JQUERY
