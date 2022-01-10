@@ -4,6 +4,25 @@
 // BUTTON DE BOTON PARA PPONER CAMBIAR DE   BACKDROUND BLACK A BACKGROUND WHITE
 
 
+// AJAX: USUARIOS: esto es provisorio, solamente para cumplir con el desafio, la idea es otra.
+
+$(document).ready(function(){
+
+    $.get("https://reqres.in/api/users", {page: 2} , function(respuesta){
+
+        console.log(respuesta)
+
+        respuesta.data.forEach((element, index) => {
+
+            $("#usuariosAJAX").append(`
+                        <h4>${element.first_name} ${element.last_name}</h4>`);
+        });
+    });
+});
+
+// FIN AJAX DESAFIO
+
+
 let ganadorDescuento;
 let codigoDescuento = 1212;
 

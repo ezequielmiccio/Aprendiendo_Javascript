@@ -5,7 +5,7 @@
 // Quitar boton ver más de la section carrito y agregar monto total y agregar cantidad - producto -precio - total arriba de todo
 
 
-/* let productos = [
+let productos = [
     {id: 1, nombre: "Fifa 20" , precio: 4500 , img: "./assets/img/fifa20.jpg" , ahorro: "15%" , info: "Deportes"},
     {id: 2, nombre: "NBA 2k20", precio: 3750 , img: "./assets/img/pes2020.jpg" , ahorro: "25%" , info: "Deportes"},
     {id: 3, nombre: "PES 2020" , precio: 2600 , img: "./assets/img/nba2k20.jpg" , ahorro: "30%" , info: "Deportes"},
@@ -14,16 +14,7 @@
     {id: 6, nombre: "Mortal Kombat XL" , precio: 1900 , img: "./assets/img/mortalkombatXL.jpg" , ahorro: "50%" , info: "Sangriento, 1 vs 1, Multiplayer"},
     {id: 7, nombre: "Call Of Duty" , precio: 4600 , img: "./assets/img/callOfDuty.jpg" , ahorro: "20%" , info: "Asesinatos, Modern Warfare, Multiplayer"},
     {id: 8, nombre: "Need For Speed" , precio: 1200 , img: "./assets/img/nfsHeat.jpg" , ahorro: "65%" , info: "Carrera, Adrenalina, Multiplayer"}
-]; */
-
-urlArray = "./json.js"
-
-window.addEventListener('load' , function(){
-
-    $.get(urlArray , function(productos){
-        
-    });
-});
+];
 
 class Producto{
     constructor({id, nombre, img, ahorro, precio, info}) {

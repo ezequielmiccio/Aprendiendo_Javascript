@@ -15,6 +15,23 @@ $font-miccio: "Staatliches", "cursive";
     margin: 0rem auto;
     min-height: 50rem;
 
+    #usuariosAJAX{
+        height: 20rem;
+        width: 100%;
+        background-color: grey;
+
+        h3{
+            color: white;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        h4{
+            color: white;
+        }
+    }
+    
+
     #header {
         display: flex;
         flex-direction: row;
