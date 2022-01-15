@@ -17,6 +17,7 @@ $(document).ready(function(){
             $("#usuariosAJAX").append(`
                         <h4>${element.first_name} ${element.last_name}</h4>`);
         });
+        
     });
 });
 
