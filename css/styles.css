@@ -6,7 +6,7 @@
   font-family: sans-serif;
 }
 
-#container {
+#root {
   width: 100%;
   height: auto;
   margin: 0rem auto;
@@ -20,23 +20,23 @@
   /* inicio formulario */
 }
 
-#container #usuariosAJAX {
+#root #usuariosAJAX {
   height: 20rem;
   width: 100%;
   background-color: grey;
 }
 
-#container #usuariosAJAX h3 {
+#root #usuariosAJAX h3 {
   color: white;
   text-align: center;
   font-size: 30px;
 }
 
-#container #usuariosAJAX h4 {
+#root #usuariosAJAX h4 {
   color: white;
 }
 
-#container #header {
+#root #header {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -51,7 +51,7 @@
   /* fin nav */
 }
 
-#container #header .logo {
+#root #header .logo {
   display: flex;
   flex-direction: row;
   flex-basis: 10%;
@@ -61,12 +61,12 @@
   padding-right: 14rem;
 }
 
-#container #header .logo #logotipo {
+#root #header .logo #logotipo {
   width: 6.5rem;
   height: 7rem;
 }
 
-#container #header #menu {
+#root #header #menu {
   display: flex;
   flex-direction: row;
   column-gap: 5rem;
@@ -77,7 +77,7 @@
   height: 100%;
 }
 
-#container #header #menu .search {
+#root #header #menu .search {
   height: 40%;
   width: 50%;
   justify-self: start;
@@ -86,19 +86,19 @@
   border-radius: 1rem;
 }
 
-#container #header #menu .search::placeholder {
+#root #header #menu .search::placeholder {
   font-size: 15px;
   color: #5c5c5c;
   padding-left: 1rem;
   font-style: italic;
 }
 
-#container #header #menu .search:hover {
+#root #header #menu .search:hover {
   box-shadow: 0px 0px 10px white;
   transition: all 500ms;
 }
 
-#container #header #menu ul {
+#root #header #menu ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -108,7 +108,7 @@
   width: 40%;
 }
 
-#container #header #menu ul a {
+#root #header #menu ul a {
   text-transform: uppercase;
   color: white;
   padding: 1rem;
@@ -116,13 +116,13 @@
   font-weight: bold;
 }
 
-#container #header #menu ul a:hover {
+#root #header #menu ul a:hover {
   box-shadow: 0px 0px 10px white;
   border-radius: 5px;
   color: white;
 }
 
-#container #content {
+#root #content {
   display: flex;
   justify-content: space-between;
   padding-top: 1.5rem;
@@ -134,7 +134,7 @@
   /* fin aside */
 }
 
-#container #content #productos {
+#root #content #productos {
   display: flex;
   flex-flow: row wrap;
   row-gap: 3rem;
@@ -143,7 +143,7 @@
   height: auto;
 }
 
-#container #content #productos .tarjets {
+#root #content #productos .tarjets {
   display: flex;
   flex-direction: column;
   width: 15rem;
@@ -153,13 +153,13 @@
   border-radius: 5px;
 }
 
-#container #content #productos .tarjets:hover {
+#root #content #productos .tarjets:hover {
   box-shadow: 0px 0px 7px white;
   transition: all 500ms;
   background-color: black;
 }
 
-#container #content #productos .tarjets .tarjetImg {
+#root #content #productos .tarjets .tarjetImg {
   justify-self: start;
   align-self: center;
   box-shadow: 0px 0px 5px #d8d8d8;
@@ -168,7 +168,7 @@
   border-radius: 5px;
 }
 
-#container #content #productos .tarjets .tarjetTitle {
+#root #content #productos .tarjets .tarjetTitle {
   color: white;
   text-align: start;
   text-transform: uppercase;
@@ -179,7 +179,7 @@
   margin-left: 0.5rem;
 }
 
-#container #content #productos .tarjets .tarjetTxt p {
+#root #content #productos .tarjets .tarjetTxt p {
   text-align: start;
   justify-self: end;
   font-weight: bold;
@@ -191,12 +191,12 @@
   margin-bottom: 0.5rem;
 }
 
-#container #content #productos .tarjets .tarjetTxt .tarjetAhorro {
+#root #content #productos .tarjets .tarjetTxt .tarjetAhorro {
   font-size: 14px;
   color: yellow;
 }
 
-#container #content #productos .tarjets button {
+#root #content #productos .tarjets button {
   display: block;
   font-family: "Staatliches", "cursive";
   font-size: 20px;
@@ -214,7 +214,7 @@
   font-weight: bold;
 }
 
-#container #content #productos .tarjets button:hover {
+#root #content #productos .tarjets button:hover {
   background: black;
   box-shadow: 0px 0px 8px white;
   border-radius: 5px;
@@ -223,14 +223,14 @@
   transition: all 300ms;
 }
 
-#container #content #productos .tarjets .infoProduct {
+#root #content #productos .tarjets .infoProduct {
   text-align: center;
   color: white;
   font-size: 15px;
   padding: 0.5rem;
 }
 
-#container #content #aside {
+#root #content #aside {
   flex-basis: 20%;
   padding: 1rem;
   display: flex;
@@ -240,12 +240,12 @@
   box-shadow: 0px 0px 3px #131212;
 }
 
-#container #content #aside:hover {
+#root #content #aside:hover {
   box-shadow: 0px 0px 10px white;
   transition: all 500ms;
 }
 
-#container #content #aside h2 {
+#root #content #aside h2 {
   display: block;
   width: 100%;
   font-size: 1.5rem;
@@ -260,13 +260,13 @@
   letter-spacing: 1px;
 }
 
-#container #content #aside ul li {
+#root #content #aside ul li {
   margin-top: 3rem;
   padding-bottom: 1.5rem;
   width: 12.5rem;
 }
 
-#container #content #aside a {
+#root #content #aside a {
   font-family: sans-serif;
   text-align: center;
   display: block;
@@ -281,12 +281,12 @@
   letter-spacing: 1px;
 }
 
-#container #content #aside a:hover {
+#root #content #aside a:hover {
   background-color: #444;
   color: #eee;
 }
 
-#container #carrito {
+#root #carrito {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
@@ -294,19 +294,19 @@
   padding: 2rem;
 }
 
-#container #carrito .tarjets {
+#root #carrito .tarjets {
   display: flex;
   flex-direction: row;
   text-align: center;
   justify-content: space-around;
 }
 
-#container #carrito .tarjets .tarjetImg {
+#root #carrito .tarjets .tarjetImg {
   height: 6rem;
   width: 4.5rem;
 }
 
-#container #carrito .tarjets .tarjetTitle {
+#root #carrito .tarjets .tarjetTitle {
   align-self: center;
   color: white;
   text-transform: uppercase;
@@ -315,45 +315,45 @@
   letter-spacing: 1px;
 }
 
-#container #carrito .tarjets .tarjetTxt {
+#root #carrito .tarjets .tarjetTxt {
   align-self: center;
 }
 
-#container #carrito .tarjets .tarjetTxt .tarjetPrecio {
+#root #carrito .tarjets .tarjetTxt .tarjetPrecio {
   color: white;
   font-size: 20px;
   font-family: "Staatliches", "cursive";
   letter-spacing: 1px;
 }
 
-#container #carrito .tarjets .tarjetAhorro {
+#root #carrito .tarjets .tarjetAhorro {
   display: none;
 }
 
-#container #carrito .addToCart {
+#root #carrito .addToCart {
   display: none;
 }
 
-#container #carrito .addToInfo {
+#root #carrito .addToInfo {
   display: none;
 }
 
-#container #carrito .vermenos {
+#root #carrito .vermenos {
   display: none;
 }
 
-#container #carrito .infoProduct {
+#root #carrito .infoProduct {
   display: none;
 }
 
-#container #goInfo {
+#root #goInfo {
   position: relative;
   display: block;
   margin: 2px 0;
   min-height: 20rem;
 }
 
-#container #goInfo .containerHide {
+#root #goInfo .containerHide {
   position: absolute;
   top: 40%;
   left: 25%;
@@ -364,7 +364,7 @@
   padding-bottom: 1rem;
 }
 
-#container #goInfo .containerHide .hideTxt {
+#root #goInfo .containerHide .hideTxt {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -376,12 +376,12 @@
   box-shadow: 0px 0px 8px white;
 }
 
-#container #goInfo .containerHide .hideTxt h3 {
+#root #goInfo .containerHide .hideTxt h3 {
   font-family: "Staatliches", "cursive";
   line-height: 5rem;
 }
 
-#container #goInfo .containerHide .hideTxt b {
+#root #goInfo .containerHide .hideTxt b {
   font-style: italic;
   font-size: 20px;
   color: yellow;
@@ -389,19 +389,19 @@
   letter-spacing: 0px;
 }
 
-#container #goInfo .containerHide .hideTxt p {
+#root #goInfo .containerHide .hideTxt p {
   font-family: "Staatliches", "cursive";
   letter-spacing: 1px;
 }
 
-#container #goInfo .containerHide .hideTxt h4 {
+#root #goInfo .containerHide .hideTxt h4 {
   font-size: 15px;
   margin-top: 3rem;
   font-family: "Staatliches", "cursive";
   letter-spacing: 1px;
 }
 
-#container #goInfo #containerTxt {
+#root #goInfo #containerTxt {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -413,43 +413,43 @@
   color: white;
 }
 
-#container #goInfo #containerTxt .pretitle {
+#root #goInfo #containerTxt .pretitle {
   font-family: "Staatliches", "cursive";
   font-size: 45px;
   letter-spacing: 2px;
 }
 
-#container #goInfo #containerTxt .titleTxt {
+#root #goInfo #containerTxt .titleTxt {
   font-family: "Staatliches", "cursive";
   font-size: 25px;
   letter-spacing: 1px;
 }
 
-#container #goInfo #containerTxt .pTxt {
+#root #goInfo #containerTxt .pTxt {
   font-family: "Staatliches", "cursive";
   letter-spacing: 1px;
 }
 
-#container #goInfo #containerTxt #goEmail {
+#root #goInfo #containerTxt #goEmail {
   width: 40%;
   height: 10%;
   border-radius: 5px;
   box-shadow: 0px 0px 2px white;
 }
 
-#container #goInfo #containerTxt #goEmail:hover {
+#root #goInfo #containerTxt #goEmail:hover {
   box-shadow: 0px 0px 10px white;
   transition: all 500ms;
 }
 
-#container #goInfo #containerTxt #goEmail::placeholder {
+#root #goInfo #containerTxt #goEmail::placeholder {
   font-size: 18px;
   padding-left: 1rem;
   color: rgba(36, 36, 36, 0.774);
   font-style: italic;
 }
 
-#container #goInfo #containerTxt #goSubmit {
+#root #goInfo #containerTxt #goSubmit {
   width: 10rem;
   height: 3rem;
   font-size: 20px;
@@ -459,7 +459,7 @@
   font-family: "Staatliches", "cursive";
 }
 
-#container #goInfo #containerTxt #goSubmit:hover {
+#root #goInfo #containerTxt #goSubmit:hover {
   box-shadow: 0px 0px 7px white;
   color: white;
   background-color: black;
@@ -467,7 +467,7 @@
   transition: all 500ms;
 }
 
-#container #registro {
+#root #registro {
   position: relative;
   display: flex;
   justify-content: center;
@@ -478,7 +478,7 @@
   /* fin formulario */
 }
 
-#container #registro .containerForm {
+#root #registro .containerForm {
   display: block;
   width: auto;
   height: auto;
@@ -489,7 +489,7 @@
   /* fin cartel */
 }
 
-#container #registro .containerForm .consultaHide {
+#root #registro .containerForm .consultaHide {
   position: absolute;
   top: 30%;
   left: 25%;
@@ -500,7 +500,7 @@
   padding-bottom: 1rem;
 }
 
-#container #registro .containerForm .consultaHide .txtConsulta {
+#root #registro .containerForm .consultaHide .txtConsulta {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -512,19 +512,19 @@
   box-shadow: 0px 0px 8px white;
 }
 
-#container #registro .containerForm .consultaHide .txtConsulta h3 {
+#root #registro .containerForm .consultaHide .txtConsulta h3 {
   font-family: "Staatliches", "cursive";
   line-height: 5rem;
 }
 
-#container #registro .containerForm .consultaHide .txtConsulta b {
+#root #registro .containerForm .consultaHide .txtConsulta b {
   font-size: 18px;
   font-family: "Staatliches", "cursive";
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
-#container #registro .containerForm .consultaHide .txtConsulta .estiloEmail {
+#root #registro .containerForm .consultaHide .txtConsulta .estiloEmail {
   font-size: 18px;
   color: yellow;
   font-family: Arial, Helvetica, sans-serif;
@@ -533,24 +533,24 @@
   text-transform: none;
 }
 
-#container #registro .containerForm .consultaHide .txtConsulta p {
+#root #registro .containerForm .consultaHide .txtConsulta p {
   font-family: "Staatliches", "cursive";
   letter-spacing: 1px;
 }
 
-#container #registro .containerForm .consultaHide .txtConsulta h4 {
+#root #registro .containerForm .consultaHide .txtConsulta h4 {
   font-size: 15px;
   margin-top: 3rem;
   font-family: "Staatliches", "cursive";
   letter-spacing: 1px;
 }
 
-#container #registro .containerForm:hover {
+#root #registro .containerForm:hover {
   box-shadow: 0px 0px 10px white;
   transition: all 500ms;
 }
 
-#container #registro .containerForm #formulario {
+#root #registro .containerForm #formulario {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -560,18 +560,18 @@
   row-gap: 3.5rem;
 }
 
-#container #registro .containerForm #formulario .buttons {
+#root #registro .containerForm #formulario .buttons {
   width: 15rem;
   height: 2rem;
   box-shadow: 0px 0px 2px white;
 }
 
-#container #registro .containerForm #formulario .buttons:hover {
+#root #registro .containerForm #formulario .buttons:hover {
   box-shadow: 0px 0px 5px white;
   transition: 500ms;
 }
 
-#container #registro .containerForm #formulario .buttons::placeholder {
+#root #registro .containerForm #formulario .buttons::placeholder {
   text-align: center;
   font-style: italic;
   font-family: "Staatliches", "cursive";
@@ -579,12 +579,12 @@
   letter-spacing: 1px;
 }
 
-#container #registro .containerForm #formulario .first .box {
+#root #registro .containerForm #formulario .first .box {
   display: flex;
   flex-direction: column;
 }
 
-#container #registro .containerForm #formulario .first .box label {
+#root #registro .containerForm #formulario .first .box label {
   margin-bottom: 0.8rem;
   margin-top: 2rem;
   font-size: 18px;
@@ -595,7 +595,7 @@
   letter-spacing: 1px;
 }
 
-#container #registro .containerForm #formulario #consulta {
+#root #registro .containerForm #formulario #consulta {
   text-align: start;
   width: 20rem;
   height: 10rem;
@@ -603,12 +603,12 @@
   margin: 0 1rem;
 }
 
-#container #registro .containerForm #formulario #consulta:hover {
+#root #registro .containerForm #formulario #consulta:hover {
   box-shadow: 0px 0px 10px white;
   transition: all 500ms;
 }
 
-#container #registro .containerForm #formulario #consulta::placeholder {
+#root #registro .containerForm #formulario #consulta::placeholder {
   text-align: center;
   font-style: italic;
   font-family: "Staatliches", "cursive";
@@ -616,13 +616,13 @@
   letter-spacing: 1px;
 }
 
-#container #registro .containerForm #formulario .third {
+#root #registro .containerForm #formulario .third {
   display: flex;
   flex-direction: row;
   column-gap: 1.5rem;
 }
 
-#container #registro .containerForm #formulario .third #send {
+#root #registro .containerForm #formulario .third #send {
   width: 8rem;
   height: 2.5rem;
   box-shadow: 0px 0px 2px white;
@@ -631,7 +631,7 @@
   letter-spacing: 1px;
 }
 
-#container #registro .containerForm #formulario .third #send:hover {
+#root #registro .containerForm #formulario .third #send:hover {
   box-shadow: 0px 0px 5px white;
   background: black;
   color: white;
@@ -639,7 +639,7 @@
   transition: all 500ms;
 }
 
-#container #registro .containerForm #formulario .third #offForm {
+#root #registro .containerForm #formulario .third #offForm {
   box-shadow: 0px 0px 2px white;
   width: 8rem;
   height: 2.5rem;
@@ -648,7 +648,7 @@
   letter-spacing: 1px;
 }
 
-#container #registro .containerForm #formulario .third #offForm:hover {
+#root #registro .containerForm #formulario .third #offForm:hover {
   box-shadow: 0px 0px 5px white;
   background: black;
   color: white;
@@ -656,49 +656,49 @@
   transition: all 500ms;
 }
 
-#container #registro .containerForm #formulario .boxnoti {
+#root #registro .containerForm #formulario .boxnoti {
   display: flex;
   flex-direction: row;
   align-items: center;
   column-gap: 10px;
 }
 
-#container #registro .containerForm #formulario .boxnoti .noti {
+#root #registro .containerForm #formulario .boxnoti .noti {
   width: 1.2rem;
   height: 1.2rem;
 }
 
-#container #registro .containerForm #formulario h6 {
+#root #registro .containerForm #formulario h6 {
   font-size: 18px;
   color: white;
 }
 
-#container footer {
+#root footer {
   border-top: 1px solid rgba(187, 187, 187, 0.438);
 }
 
-#container footer .firstColumn {
+#root footer .firstColumn {
   max-width: 1440px;
 }
 
-#container footer .firstColumn .firstRow h2 {
+#root footer .firstColumn .firstRow h2 {
   font-family: "Staatliches", "cursive";
   font-weight: bold;
   letter-spacing: 1px;
 }
 
-#container footer .firstColumn .firstRow h2 a {
+#root footer .firstColumn .firstRow h2 a {
   text-decoration: none;
   font-size: 0.8rem;
   color: white;
 }
 
-#container footer .firstColumn .firstRow h2:hover > a {
+#root footer .firstColumn .firstRow h2:hover > a {
   color: cyan;
   transition: 300ms;
 }
 
-#container footer .firstColumn .firstRow h3 {
+#root footer .firstColumn .firstRow h3 {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 0.6rem;
@@ -708,100 +708,100 @@
   cursor: pointer;
 }
 
-#container footer .firstColumn .firstRow h3:hover {
+#root footer .firstColumn .firstRow h3:hover {
   color: cyan;
   transition: 300ms;
 }
 
-#container footer .firstColumn .secondRow h2 {
+#root footer .firstColumn .secondRow h2 {
   font-family: "Staatliches", "cursive";
   font-weight: bold;
   letter-spacing: 1px;
 }
 
-#container footer .firstColumn .secondRow h2 a {
+#root footer .firstColumn .secondRow h2 a {
   text-decoration: none;
   font-size: 0.8rem;
   color: white;
 }
 
-#container footer .firstColumn .secondRow h2:hover > a {
+#root footer .firstColumn .secondRow h2:hover > a {
   color: cyan;
   transition: 300ms;
 }
 
-#container footer .firstColumn .secondRow h3 {
+#root footer .firstColumn .secondRow h3 {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 500;
   letter-spacing: 1px;
   font-size: 0.6rem;
 }
 
-#container footer .firstColumn .secondRow h3 a {
+#root footer .firstColumn .secondRow h3 a {
   text-transform: uppercase;
   text-decoration: none;
   color: white;
 }
 
-#container footer .firstColumn .secondRow h3:hover > a {
+#root footer .firstColumn .secondRow h3:hover > a {
   color: cyan;
   transition: 300ms;
 }
 
-#container footer .firstColumn .thirdRow h2 {
+#root footer .firstColumn .thirdRow h2 {
   font-family: "Staatliches", "cursive";
   font-weight: bold;
   letter-spacing: 1px;
 }
 
-#container footer .firstColumn .thirdRow h2 a {
+#root footer .firstColumn .thirdRow h2 a {
   text-decoration: none;
   font-size: 0.8rem;
   color: white;
 }
 
-#container footer .firstColumn .thirdRow h2 a {
+#root footer .firstColumn .thirdRow h2 a {
   text-transform: uppercase;
   text-decoration: none;
   color: white;
 }
 
-#container footer .firstColumn .thirdRow h2:hover > a {
+#root footer .firstColumn .thirdRow h2:hover > a {
   color: cyan;
   transition: 300ms;
 }
 
-#container footer .firstColumn .fortyRow .btnTitle {
+#root footer .firstColumn .fortyRow .btnTitle {
   text-align: center;
   margin-left: 7.5rem;
 }
 
-#container footer .firstColumn .fortyRow .btnTitle h2 {
+#root footer .firstColumn .fortyRow .btnTitle h2 {
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   font-weight: bold;
   font-size: 0.8rem;
 }
 
-#container footer .firstColumn .fortyRow .btnImages .icon {
+#root footer .firstColumn .fortyRow .btnImages .icon {
   font-size: 2rem;
   color: white;
   width: 3rem;
 }
 
-#container footer .firstColumn .fortyRow .btnImages .icon:hover {
+#root footer .firstColumn .fortyRow .btnImages .icon:hover {
   font-size: 2.2rem;
   color: cyan;
   transition: 300ms;
 }
 
-#container footer .secondColumn .firstRow p {
+#root footer .secondColumn .firstRow p {
   font-size: 0.8rem;
   font-weight: bold;
   color: white;
 }
 
-#container footer .secondColumn .secondRow div p {
+#root footer .secondColumn .secondRow div p {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.6rem;
   font-weight: bold;

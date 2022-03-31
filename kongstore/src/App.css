@@ -1,3 +1,48 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+#root {
+  width: 100%;
+  height: auto;
+  margin: 0rem auto;
+  min-height: 50rem;
+}
+
+#root #header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: end;
+  height: 8rem;
+  background-color: #0f0f0f;
+  border-bottom: 1px solid rgba(24, 24, 24, 0.842);
+  /* inicio logo */
+  /* fin logo */
+  /* inicio nav */
+  /* fin nav */
+}
+
+#root #header .logo {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 10%;
+  color: black;
+  text-shadow: 1px 1px 0px #ccc;
+  text-transform: uppercase;
+  padding-right: 14rem;
+}
+
+#root #header .logo #logotipo {
+  width: 6.5rem;
+  height: 7rem;
+}
+
 .App {
   text-align: center;
 }
