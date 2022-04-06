@@ -647,6 +647,439 @@ export default ClassCount
 
 
 
+CLASE 3: ******************************************
+
+Existen COMPONENTES CONTENEDORES: Aquellos que contienen otros componentes (lógica)
+
+COMPONENTES DE VISUALIZACION: Solamente harán un retorno de lo visual.
+
+WEBPACK: Nos permitía unir varios componentes individuales en uno. Se puede
+configurar de distintas maneras. Recopila todos los archivos del proyecto y 
+hace uno solo (transpila y traduce las extensiones de lenguaje (js, sass, html, etc)).
+Mientras nosotros lo estemos desarrollando, envía la info al navegador.
+
+npm build: Si debemos subir una versión a produccion, todo lo que veniamos haciendo
+mientras desarrollabamos, lo hace una vez y lo deja en una carpeta 'build' (pesa mucho menos)
+
+Componentes de funcion (funcionales), Componentes de clase. A su vez, existen los Componentes
+de visualizacion (retornan lo visual del codigo). Componentes contenedores.
+
+En las funcionales se envian por parametros y luego se llama con parametros.elemento
+En las de clase mediante this.state.element por ejemplo.
+
+Los COMPONENTES tienen un ciclo de vida, van a ir ocurriendo eventos, quizás cambien
+las props, etc. Hasta que el componente desaparezca. Muere para que nazca otro.
+
+-------------------------------------------------------------------------------
+
+PROPS: pueden ser string, numeros, otra funcion, otro objeto, valores de librerias externas,
+pueden ser otros componentes hijos. Un componente de react no es más que una funcion 
+y una funcion es un objeto (esto se puede pasar en cualquier funcion de js).
+
+React detecta cuales son las etiqueta hijo y nos permite enviarlos como objetos
+"children" mediante PROPS. Lo insertamos con {children}.
+Si tiene más de una etiqueta hijo, lo que vamos a enviar es un ARRAY. Esto hay
+que tenerlo en cuenta ya que si solo pasamos 1 no vamos a tener disponibles Los
+metodos/funciones de arrays.
+
+-------------------------------------------------------------------------------
+
+ESTADOS: Los necesitamos para almacenar estados de componentes ya que no podemos
+hacerlo a través de variables ya que mueren. 
+
+En componentes basados en clases, debíamos extender la clase component (import {Component} from 'react')
+Esto tiene implementadas las funciones setState, this.state.
+
+En componentes basados en funciones se hace a través de HOOKS, debemos importarlo
+al documento (import {useState} from 'react')
+nos permiten almacenar estados. Hay un hook que se encarga de los estados 
+(useState).
+
+useState: es una funcion que retorna un array de dos posiciones. Vamos a poder 
+utilizarlo en los componentes basados en funciones como el Components en Clases.
+
+---------------------------------------------------------------------------
+
+Este array de dos posiciones lo puedo desestructurar para que sea más comodo de 
+leer:
+
+const FunctionCounter = (props) => {
+    
+    const myState = useState(); // esto me retorna un array lenght: 2
+    
+}
+
+return(
+    
+    <p>{myState[0, 1]}</p>
+    
+    )
+    
+ ----------------------------------------------------------------------
+
+Este codigo lo desestructuramos para no tener que llamarlo: {myState[0, 1]} y que
+sea más facil de leer: Primer posicion con el valor almacenado (como una variable)
+La segunda posicion la funcion que me va a permitir cambiar el valor, se inicia
+la funcion con "set" y consiguiente el nombre del valor.
+
+
+const FunctionCounter = (props) => {
+    
+    const [count, setCount] = useState(); // esto me retorna un array lenght: 2
+    
+}
+
+<p>{count}</p>
+
+En este caso se llamaria con {count}
+
+-------------------------------------------------------------------------
+
+Entonces para poder cambiar de estado en un componente de funcion vamos a precisar
+de useState para crear un estado y luego lo podemos modificar de la siguiente manera:
+
+const FunctionCounter = (props) => {
+    
+    const [count, setCount] = useState(props.initial); // props.initial para inicializar
+    // de esta forma se puede reutilizar codigo de la siguiente manera:
+    const [title, setTitle] = useState('Creando titulo');
+
+const increment = () => {
+    
+    setCount(count++); // seteamos con valor++
+    
+}
+
+const decrement = () => {
+    
+    setCount(count--); // seteamos con valor++
+    
+}
+
+return(
+    
+    <div>
+        <button onClick = {decrement}> - </button>
+        // de esta forma le pasamos la funcion ejecutando la MOD al hacer click
+        <button onClick = {() => setTitle('Cambie el titulo')};>Cambiar Titulo</button>
+        <h1>{title}</h1>
+
+         si en {} no pongo el valor del estado, react va a reconciliar (mostrar el cambio visual)
+
+        <p>{count}</p> // valor de la desestructuracion del array que nos retorna el useState
+        <button onClick = {increment}> + </button>
+    </div>
+    
+    )
+
+}
+
+-------------------------------------------------------------------------
+
+ La llamada al HOOK:
+
+const [count, setCount] = useState(props.initial);
+
+NUNCA debe ir dentro de un IF, se declara como constante dentro de la function.
+
+React va a saber cuándo hay un EVENTO ya que le definimos un ESTADO. Cada vez que cambie, React lo va a identificar.
+
+ESTADO DE CICLO DE VIDA: momento por el cuál esta pasando el componente.
+
+----------------------------------------------------------
+
+CICLO DE VIDA DE COMPONENTES: Serie de estados por el cuál pasan nuestros componentes.
+
+Estos ESTADOS tienen como correspondencia ciertos metodos y funciones que utilizamos para realizar distintas cosas.
+
+React va a conocer el ESTADO de nuestro componente a medida que vaya evolucionando en el tiempo.
+
+Cuándo el componente se defina por primera vez, tendrá un estado. Una vez que se ejecute el código y el return por primera vez, el ESTADO es modificado y pasa a ser un "estado de montado". Luego, tendremos el pasado de montaje a ya montado. Lo mismo pasa cuándo se desmonta, cuándo lo sacamos, React sabe que eso va a desaparecer. 
+
+El componente siempre debe RENDERIZAR algo. Siempre hay que dejar que React renderice por primera vez algo.
+
+LLAMADA ASÍNCRONA: Se denominan así porque llevan un tiempo, puede ser tanto de 5 segundos como de 2 horas. 
+Es código que no es instantanea la ejecución de ese código.
+
+---------------------------------------------------------
+
+Para decirle a React que hacer en cada ESTADO vamos a tener otro HOOK.
+
+Esta siguiente funcion nos la da React para indicarle que hacer en cada ESTADO DE SU CICLO DE VIDA.
+
+-------------------------------------------------------------
+
+USEEFFECT: para crear funciones asíncronas vamos a tener que utilizar useEffect.
+Esta función me permite manejar los estados del ciclo de vida del componente.
+En el primer parámetro se pasa la funcion a ejecutar.
+En el segundo parámetro un [] (array).
+En caso de que este segundo parámetro sea un array vacio, el código se va a ejecutar la función que le derivemos únicamente luego del primer montaje (renderizado).
+En caso de que le pasemos un valor dentro del [] estará pendiente de cuándo se modifique el estado de ese valor para ejecutarse.
+Esta funcion useEffect puede utilizarse cuántas veces querramos.
+El punto fuerte es ejecutarlo para tomar datos de una API.
+
+-------------------------------------------------------------
+Ejemplo: PARA MONTAR UN COMPONENTE
+
+Dentro de la carpeta FunctionCounter (contadores):
+
+import {useState, useEffect} from 'react';
+
+const FunctionCounter = (props) => {
+
+    console.log("1: Empieza la ejecucion del componente");
+    const [count, setCount] = useState(props.initial); //initial en App "<FunctionCounter initial={0}"
+    const [title, setTitle] = useState("Titulo inicial");
+
+    useEffect(() => {
+
+        setTimeout(() => {
+            console.log("código asíncronico ya que no se ejecuta de forma instantanea");
+        }, 500) // asíncronico
+
+    }, []);
+
+    useEffect(() => {
+        console.log("3: Solo se ejecuta luego del primer renderizado"); // síncronico
+
+    }, []); // con array vacio solamente se ejecuta al primer renderizado.
+
+    useEffect(() => {
+        console.log("4: Solo se ejecuta si hay    un cambio de estado en COUNT o TITLE");
+
+    }, [count, title]);
+
+
+    const decrement = () => {
+
+        setCount(count--);
+
+    };
+
+    const increment = () => {
+
+        sestCount(count++);
+
+    };
+
+    console.log("2: Esto se ejecuta antes del useEffect")
+    return(
+        <div>
+            <h1>{title}</h1>
+            <button onClick = {() => setTitle("Cambie el titulo")}>Cambiar titulo</button>
+            <button onClick = {decrement}>Restar</button>
+            <p>{count}</p>
+            <button onClick = {increment}>Sumar</button>
+        
+        
+        </div>
+    )
+
+}
+
+--------------------------------------------------------------
+
+PARA DESMONTAR UN COMPONENTE: React sabe que lo que este dentro del return es proceso de desmontamiento.
+
+En FunctionCounter:
+
+useEffect(() => {
+    console.log("Acá puedo tener código");
+
+    return(() => {
+        console.log("Lo que este dentro del return es para desmotar")
+    })
+
+}, []);
+
+
+
+En App:
+
+import {useState} from 'react';
+
+function App() {
+
+    const [show, setShow] = useState(true); // inicializamos en true de ejemplo
+
+    return(
+        <div className = "App">
+            <button onClick = {() => setShow(!show)}> {show ? 'no mostrar' : 'mostrar'}</button>
+            {show ? <FunctionCounter initial = {1}/> : null}
+        </div>
+    );
+}
+
+La LÓGICA de la siguiente linea es igual a IF:
+
+{show ? <FunctionCounter initial = {1}/> : null} = a condicional IF
+
+if(show == true){
+    <FunctionCounter initial = {1}/>
+}else{
+    null
+}
+
+
+--------------------------------------------------------------
+
+PROMESAS: Las promesas tienen un estado pendiente. Puede ejecutarse o no. El resto de las funciones siguen pendientes de si se ejecuta promise o no.
+
+RESOLVE: RESOLVER
+REJECT: 
+
+const recibirComida = () => {
+
+    return new Promise((resolve, reject) => {
+        / funcion asíncronica
+        setTimeout(() => {
+            / resolve para resolver (en este caso un string)
+            resolve('recibi la comida');
+        }, 5000);
+    })
+}
+
+/ aca voy a tener una promesa, esta es la forma de llamarla
+
+recibirComida().then(response => {
+    console.log(response);
+    console.log(comer); // despues de recibir la comida
+});
+
+METODO .THEN: la funcion que le pasemos la va a ejecutar únicamente cuándo la funcion dentro del return Promise este resuelto.
+Ejecutando .then se va a guardar un espacio en memoria con la funcion que se va a ejecutar cuando la promesa se resuelva.
+
+-------------------------------------------------------------
+
+código más limpio: En este siguiente caso 'si hay comida' el codigo sigue fluyendo, 'si no hay comida' se detiene al menos que utilicemos distintos metodos como el .catch.
+Es decir que, 'si hay comida' se ejecuta el RESOLVE, si 'no hay comida' se ejecuta el REJECT, que para poder seguir fluyendo el codigo vamos a utilizar distintos metodos.
+
+El IF en esta funcion es para reemplazar el funcionamiento de FIREBASE ya que todavía no lo vimos.
+El setTimeout lo utilizamos para simular una tardanza (codigo asíncronico)
+
+const recibirComida = () => {
+
+    return new Promise((resolve, reject) => {
+        const hayComida = true;
+
+        setTimeout(() => {
+            if(hayComida){
+                resolve('recibi la comida');
+            }else{
+                reject('no hay comida');
+            }
+        }, 5000);
+
+    })
+}
+
+/ aca voy a tener una promesa, esta es la forma de llamarla
+
+recibirComida().then(response => {
+    console.log(response);
+    console.log(comer); // despues de recibir la comida
+});
+
+REJECT: podemos utilizar:
+
+.then: se utiliza para ver lo que nos responde la promisa, por si o por no
+
+.catch: Se aplica en el segundo parametro del THEN.
+Con esta funcion se sigue ejecutando otra parte del código que querramos en caso de que no se cumpla la promesa.
+En caso de que el primer parametro del then tenga un error, se ejecuta el código del .catch
+
+recibirComida().then(response => {
+    throw new Error('la comida esta fria');
+
+    console.log(Si hay error (la comida esta fria) este codigo no se ejecuta, se ejecuta el catch)
+
+}).catch(error => { 
+    console.log(si hay error se ejecuta este codigo sino el que esta en el primer parametro del then);
+})
+
+La promesa me va a devolver una respuesta para poder seguir con lo que pidamos o que nos devuelva un error si no se devuelve lo pedido. 
+
+ESTO SE UTILIZA PARA EJECUTAR UNA API.
+
+FINALLY = .finally(): Este metodo se ejecuta al final de la promesa pase lo que pase.
+
+recibirComida(). then(responde => {
+
+}).catch(error => {
+
+    console.log(Se ejecuta si no se ejecuta o se frena el then)
+
+}). finally(() => {
+
+    console.log(Se ejectura pase lo que pase);
+
+})
+
+--------------------------------------------------------------
+
+En un carrete, la comida serían los PRODUCTOS.
+El mozo sería una función que nos devuelva la comida (PRODUCTO)
+La comunicación con el mozo sería la PROMESA. (si puede o no)
+
+Nuestro CATÁLOGO va a ser el archivo itemListContainer, quien alista todos los items (podría ser en cualquier otro pero es por tema de lejilibidad)
+
+archivo listItemContainer:
+
+/ se importa con {} ya que exportamos directamente la funcion y no de forma default.
+import { getProducts } from "../../asyncmock";
+import { useState, useEffect } from 'react';
+
+const ItemListContainer = ({ greeting }) => {
+
+    / le generamos un estado a los productos para poder llevarlos al return y que React este atento de cada MOD
+
+    const [products, setProducts] = useState([]); // aqui se agrega array vacio dentro del useState para inicializar y poder utilizar el map en el return, sino apareceria que no esta definida la funcion.
+
+    useEffect(() => {
+        getProducts().then(response => {
+            setProducts(response); // para guardar la respuesta en el Estado del componente. Este estado es el que se va a mostrar en el return.
+        });
+    }, [])
+
+    return(
+        <h1>{greeting}</h1>
+        <ul>
+            / llaves ya que es el tercer paremetro que crea el elemento padre sin jsx
+        
+            {products.map(product => <li key={product.id}>{product.name}</li>)} // en nuestro proyecto debemos agregr la cart entera
+        
+        </ul>
+
+        sin js la linea anterior seria:
+        {product.map(product => React.createElement('li', {}, product.name))}
+    );
+
+}
+
+export default ItemListContainer;
+
+
+MAP = .map() : se utiliza para ir cargando producto por producto.
+
+--------------------------------------------------------------
+
+Dentro de asyncmock:
+
+const products = [
+    id:1, name: "mortal-kombat", price: 1200, category: "fight", etc.
+]
+
+/ exportamos directamente y no por default (la dif es que se llama con {getProducts})
+
+export const getProducts = () => {
+
+    return new Promise(resolve, reject) => {
+        setTimeout(() => {
+            resolve(products); // si se resuelve me entrega los prodcutos
+        }, 2000); a los dos segundos
+
+    }
+}
 
 
 
