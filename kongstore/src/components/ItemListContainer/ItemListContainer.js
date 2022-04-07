@@ -1,10 +1,28 @@
 import React from 'react';
-import ItemList from '../ItemList/ItemList';
+import {useState , useEffect} from 'react';
+import { getProducts } from '../../asyncmok';
 
-const ItemListContainer = ({logo}) => {
+const ItemListContainer = () => {
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        getProducts().then(response => {
+            setProducts(response);
+        });
+    }, [])
+
     return(
-        <h2>{logo}</h2>
-    );
+
+        <div className='productos'>
+            <ul>
+                {products.map(product => <li key={product.id}>{product.nombre}</li>)}
+            </ul>
+
+        </div>
+
+    )
+    
 }
 
 export default ItemListContainer;

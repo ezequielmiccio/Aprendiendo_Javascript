@@ -1,18 +1,21 @@
-import CartWidge from './CartWidge/CartWidge';
+import CartWidge from '../CartWidge/CartWidge';
 import './NavBar.css';
 
-const NavBar = () => {
+const NavBar = ({logo}) => {
 
     return (
-            <nav id="menu">
+        <nav id="menu">
+
+            <h2 className='logoStyle'>KONGSTORE</h2>
     
-                <input type="search" class="search" placeholder="¿Qué estás buscando?"/>
+            <input type="search" class="search" placeholder="¿Qué estás buscando?"/>
     
-                <ul>
-                    <CartWidge/>
-                </ul>
-            </nav>
-      );
+            <ul>
+                <CartWidge/>
+            </ul>
+
+        </nav>
+    );
 
 }
 
