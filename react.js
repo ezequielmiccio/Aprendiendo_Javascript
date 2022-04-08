@@ -1081,6 +1081,221 @@ export const getProducts = () => {
     }
 }
 
+----------------------------------------------------------------------------------------------------------------
+
+CLASE 4:
+
+Una vez que clonamos un proyecto, debemos entrar al proyecto donde se encuentra el package y realizar el npm install
+
+API = Aplication Programming Interface: Interfaces entre sistemas, maneras de comunicarlos. 
+Interfaz que los sistemas nos brindan para ingresar a su sistema.
+
+La mayoría de sistemas suelen mejorar la experiencia de usuarios a través de datos.
+
+La forma más común de recibir datos es a través de JSON.
+Los datos se almacenan en un servidor, este servidor debe tener un acuerdo entre proveedor y consumidor (seguridad, identificaciones, lenguajes, etc).
+
+Tenemos que saber quien inicia la operacion y como se sincronizan.
+
+-----------------------------------------------------------
+
+CONEXIÓN POOL: El cliente solicita info y trae
+
+El cliente solicita la info, el servidor le envia la respuesta. Fin de la comunicación.
+
+-----------------------------------------------------------
+
+CONEXION PUSH: El servidor es quién inicia la comunicación.
+(push notification). Rapi, pedidosya, etc.
+Push nace para poder generar engagement y lograr que los usuarios recuerden nuestra app, ofreciendo un beneficio/interés en el momento en el que el servidor lo considere oportuno
+
+El cliente se suscribe a un servicio de la aplicación y quedamos registrados.
+Cuándo al servidor se le ocurra, inicia la comunicación a través de un mensaje (puede ser un anuncio, publicidad, etc) y la envía a un servicio (el que maneja las push notification).
+
+---------------------------------------------------------
+
+FIREBASE: Firebase ya tiene su servicio de push notification.
+Es un back end como servicio, nos lo va a proveer Google (su creador). Lo utilizamos como propio pero sin escribir una línea de código.
+Vamos a poder consumirlos, actualizarlos, etc.
+
+-----------------------------------------------------------
+
+POLLING: De no utilizar PUSH y que sea el cliente quien solicita los datos, lo que se hace es configurar a los clientes para que constantemente pregunten si hay algún cambio (algo nuevo).
+
+------------------------------------------------------------
+
+REQUESTS VIA HTTP/S: Nos permiten establecer un protocolo de transferencia definido por una dirección/URL, verbo (GET, POST, PUT, DELETE +), parámetros (vía query o URL), contenido de un post, configuraciones extras en los headers. La utilizamos para realizar una solicitud a un servidor.
+
+1) Para solicitar info utilizamos el verbo GET.
+2) Dependiendo de para que lo llamemos vamos a utilizar tal o tal parámetro.
+3) Una vez que recibamos, vamos a tener que dar algo utilizando el verbo POST y en el BODY debemos indicar que le vamos a dar (JSON).
+
+GET = OBTENER
+POST = CREAR
+PUT = CREAR / ACTUALIZAR
+PATCH = ALTERACIONES
+DELETE = ELIMINAR
+
+PUT = El put busca si existe un dato, si existe lo actualiza y si no existe lo crea.
+
+PATCH = Altera parcialmente algún dato de ese recurso indicado.
+
+DELETE = Para eliminar, esto no elimina de la base de datos el recurso, queda guardado pero con un cambio de estado.
+
+El servidor comprende que es un POST y no debería ser cacheado, si hacemos un GET y fuera cacheable, el navegador podrá cachearlo pero nunca lo hará con un recurso verbo POST.
+
+--------------------------------------------------------------
+
+QUERY PARAMS = PARÁMETROS: Para buscar recursos que no estamos seguros si existen o no.
+Nos permiten incluir en la direccion, información que se usa para utilizar los recursos en el servidor.
+Si los query params no encuentran algo, en vez de retornar un error, directamente no retorna nada.
+
+
+Como se utilizan?
+
+Buscamos en google utilizando https con el recurso SEARCH y la letra q (q = query). 
+
+Ej: www.google.com.ar/search?q=coderhouse
+
+Se separa con ? la URL de los PARAMS. Si tengo que seguir agregando params los voy a separar por &.
+
+http://url.com/find?type=order&id=1234
+
+--------------------------------------------------------------
+
+URL PARAMS / SEGMENT: Se utilizan cuándo ya conocemos el recurso específico que se buscará.
+Se utilizan para incluir el identificador del recurso dentro de la misma URL.
+
+Una vez que entramos a la información del recurso que busque, puedo traerlos a través de los URL PARAMS.
+
+https://myapp.coder/student/1234
+
+Buscamos el estudiante con id 1234, esa información si sabemos que existe, podemos colocarla directamente.
+
+También podemos buscar recursos que pertenecen a otro recurso, por ejemplo: los cursos que realizo otro estudiante.
+
+https://myapp.coder/student/1234/courses
+
+-------------------------------------------------------------
+
+BODY: Se utiliza para transferir piezas de información entre el cliente y el servidor.
+
+POST URL/url param HTTP/1.1
+
+HEADER:
+
+Host: 
+Connection:
+Content-type: application/json
+
+BODY:
+
+{"name": "John", "age: 45"}
+
+--------------------------------------------------------------
+
+IMPORTANTE:
+
+Trabajamos el JSON en nuestra aplicación como objeto de JS pero no podemos enviarlo así a la red. Debemos convertirlo a string (cadena de caracteres), lo vamos a agregar al body y lo envíamos. Quien reciba esta request va a agarrar el body, parsearlo a JSON y en el código lo va a poder trabajar como un objeto en JS.
+
+--------------------------------------------------------------
+
+COMO CREAMOS REQUEST EN EL NAVEGADOR?
+
+API FETCH = Fetch API: Método que tiene el navegador incluido para que podamos hacer request. 
+Esta función nos retorna una PROMISE que se resuelve al terminar de hacer la REQUEST al back end al que nos querramos conectar. 
+Esta PROMISE en un principio va a estar PENDIENTE y una vez que el server nos envía una respuesta, en ese momento se va a resolver (como bien o como mal). 
+Por eso, debemos trabajar de manera asíncrona ya que no sabemos cuánto puede tardar todo este proceso.
+
+--------------------------------------------------------------
+
+QUERY PARAMS: ?
+
+Copiamos la URL hasta SEARCH.
+
+API MELI: api.mercadolibre.com/sites/MLA/search
+
+y luego añadimos depende lo que querramos crear en la documentacion de la api lo que sigue con ?
+
+https://api.mercadolibre.com/sites/MLA/search?q=
+
+Luego del igual lo que querramos buscar
+
+https://api.mercadolibre.com/sites/MLA/search?q=notebook
+
+Esta API va a venir en forma de promesa por lo que la utilizamos a través del método .then.
+
+A través del metodo JSON que tienen las response acceder a la informacion que estoy esperando. (responde.json)
+Esto nos va a traer otro json con la informacion y la utilizamos con otro .then
+
+-------------------------------------------------------------
+
+PASADO A LIMPIO: UTILIZAR API MELI
+
+Dentro del ItemListContainer:
+
+import {useState, useEffect} from 'react';
+
+const ItelListContainer = () => {
+
+    const [products, setProducts] = useState([]);
+    const [search, setSearch] = useState(""); /ya que utilizamos strings
+
+    const fetchProducts = () => {
+
+        /backtips para agregar ${search}
+
+        fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${search}`)
+        .then(response => {
+            return response.json()
+        }).then(res => {
+            console.log(res.results);
+            setProducts(res.results);
+        })
+
+    }
+
+    return(
+        <div className="productos">
+
+            <input type="text" onChange={(e) => setSearch(e.target.value)}/>
+            <button onClick = {fetchProducts}>Buscar</button>
+
+            <ul>
+                {products.map(product => <img key={product.id} src={product.thumbnail} alt="img")}/>}
+
+                {products.map(product => <li key={product.id}>{product.nombre}</li>)}
+            </ul>
+
+        
+        </div>
+    )
+
+}
+
+------------------------------------------------------------
+
+CORS: 
+
+Al realizar un request nos podemos encontrar un error de seguridad que se produce cuándo un back end no esta configurado para aceptar peticiones de otra URL.
+
+Antes de enviar el request entre dominios, el navegador envia una request options denominada PRE-FLIGHT. 
+
+Esto quiere decir que solicita enviar la request y el back responde por si o por no, en caso de ser por no, aparece el CORS en consola.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 */

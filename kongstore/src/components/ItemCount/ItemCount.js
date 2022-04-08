@@ -3,6 +3,10 @@ import {useState} from 'react';
 const ItemCount = ({initial = 0, stock, onAdd}) => {
 
     const [count, setCount] = useState(initial);
+/* 
+    const onAdd = (quantity) => {
+        console.log(quantity);
+    } */
 
     const increment = () => {
 
